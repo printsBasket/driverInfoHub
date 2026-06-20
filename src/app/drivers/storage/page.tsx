@@ -27,6 +27,18 @@ export default function StorageDriversPage() {
           { num: '∞', label: 'Data Moved' },
           { num: '0', label: 'Lost Bytes' },
         ]}
+        card={{
+          title: 'Storage Hub',
+          subtitle: 'Performance & Reliability',
+          items: [
+            'SSD Performance Optimization',
+            'Drive Health Monitoring',
+            'Data Transfer Speed Tips',
+            'Storage Device Compatibility',
+          ],
+          statNum: '800+',
+          statLabel: 'Device Guides',
+        }}
       />
 
       {/* What Are Storage Drivers Section */}

@@ -27,6 +27,18 @@ export default function InputDevicesPage() {
           { num: '0', label: 'Lost Input' },
           { num: '1ms', label: 'Latency' },
         ]}
+        card={{
+          title: 'Input Device Hub',
+          subtitle: 'Setup & Troubleshooting',
+          items: [
+            'Keyboard Driver Installation',
+            'Mouse & Touchpad Fixes',
+            'Gaming Controller Setup',
+            'Input Responsiveness Tips',
+          ],
+          statNum: '420+',
+          statLabel: 'Solution Guides',
+        }}
       />
 
       {/* What Are Input Drivers Section */}

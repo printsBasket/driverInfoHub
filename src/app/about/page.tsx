@@ -65,15 +65,13 @@ const editorial = [
 export default function About() {
   return (
     <>
-      <section className="block" style={{ background: 'var(--bg-light)', paddingTop: '30px', paddingBottom: '30px' }}>
-        <div className="container">
-          <div className="section-head">
-            <span className="section-kicker">About Driver Info Hub</span>
-            <h1>We Translate the Technical, <br />So You Can Get On With Your Day</h1>
-            <p style={{ fontSize: '1.1rem', maxWidth: '800px', margin: '12px auto' }}>
-              Driver Info Hub is a small, independent education project with one stubborn belief: technology should not feel intimidating. Every guide here is written for beginners while still being useful for advanced users who want clarity without noise.
-            </p>
-          </div>
+      <section className="hero-section">
+        <div className="hero-container">
+          <span className="hero-kicker">About Driver Info Hub</span>
+          <h1 className="hero-h1">We Translate the Technical, <br />So You Can Get On With Your Day</h1>
+          <p className="hero-p">
+            Driver Info Hub is a small, independent education project with one stubborn belief: technology should not feel intimidating. Every guide here is written for beginners while still being useful for advanced users who want clarity without noise.
+          </p>
         </div>
       </section>
 

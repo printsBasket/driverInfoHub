@@ -27,6 +27,18 @@ export default function ChipsetDriversPage() {
           { num: '100%', label: 'Of Hardware' },
           { num: '∞', label: 'Impact Range' },
         ]}
+        card={{
+          title: 'Chipset Hub',
+          subtitle: 'System Foundations & Updates',
+          items: [
+            'Motherboard Chipsets Guide',
+            'Driver Installation Steps',
+            'BIOS & Driver Compatibility',
+            'System Stability Improvements',
+          ],
+          statNum: '650+',
+          statLabel: 'Compatibility Guides',
+        }}
       />
 
       {/* What Are Chipset Drivers Section */}

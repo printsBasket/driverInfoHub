@@ -27,6 +27,18 @@ export default function UserModeDriversPage() {
           { num: '100%', label: 'Process Isolation' },
           { num: '0', label: 'System Crashes' },
         ]}
+        card={{
+          title: 'User-Mode Resources',
+          subtitle: 'Stability & Safety Guides',
+          items: [
+            'Process Isolation Explained',
+            'Memory Protection Basics',
+            'Safe Driver Architecture',
+            'Recovery & Restart Handling',
+          ],
+          statNum: '350+',
+          statLabel: 'Safety Guides',
+        }}
       />
 
       {/* What Are User-Mode Drivers Section */}

@@ -27,6 +27,18 @@ export default function KernelModeDriversPage() {
           { num: '0', label: 'Memory Boundaries' },
           { num: '∞', label: 'Hardware Access' },
         ]}
+        card={{
+          title: 'Kernel-Mode Resources',
+          subtitle: 'Deep Technical Guides',
+          items: [
+            'Direct Hardware Access',
+            'Memory Protection Levels',
+            'Interrupt Handling Basics',
+            'System Crash Prevention',
+          ],
+          statNum: '500+',
+          statLabel: 'Technical Guides',
+        }}
       />
 
       {/* What Are Kernel-Mode Drivers Section */}

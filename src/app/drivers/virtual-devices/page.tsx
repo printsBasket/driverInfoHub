@@ -27,6 +27,18 @@ export default function VirtualDeviceDriversPage() {
           { num: 'Software', label: 'Hardware' },
           { num: '0', label: 'Circuits' },
         ]}
+        card={{
+          title: 'Virtual Device Hub',
+          subtitle: 'VM & Emulation Guides',
+          items: [
+            'Virtual Machine Setup',
+            'Emulator Configuration',
+            'VPN Driver Basics',
+            'Performance Optimization',
+          ],
+          statNum: '280+',
+          statLabel: 'Setup Guides',
+        }}
       />
 
       {/* What Are Virtual Drivers Section */}

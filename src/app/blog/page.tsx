@@ -153,15 +153,13 @@ const popularTags = ['Driver Errors', 'Wi-Fi Issues', 'GPU Updates', 'Printer Pr
 export default function Blog() {
   return (
     <>
-      <section className="block" style={{ background: 'var(--bg-light)', paddingTop: '30px', paddingBottom: '30px' }}>
-        <div className="container">
-          <div className="section-head">
-            <span className="section-kicker">The Driver Blog</span>
-            <h1>Friendly, Useful Reads About <br />How Your Computer Actually Works</h1>
-            <p style={{ fontSize: '1.1rem', maxWidth: '800px', margin: '12px auto' }}>
-              Plain-English articles, calm knowledge, and the occasional "wait, that's what it does?" moment. Written for curious users who want practical answers without getting buried in technical jargon.
-            </p>
-          </div>
+      <section className="hero-section">
+        <div className="hero-container">
+          <span className="hero-kicker">The Driver Blog</span>
+          <h1 className="hero-h1">Friendly, Useful Reads About <br />How Your Computer Actually Works</h1>
+          <p className="hero-p">
+            Plain-English articles, calm knowledge, and the occasional "wait, that's what it does?" moment. Written for curious users who want practical answers without getting buried in technical jargon.
+          </p>
         </div>
       </section>
 

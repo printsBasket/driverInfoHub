@@ -27,15 +27,13 @@ export default function Drivers() {
   return (
     <>
       {/* Hero Section with Light Background */}
-      <section className="block" style={{ background: 'var(--bg-light)', paddingTop: '30px', paddingBottom: '30px' }}>
-        <div className="container">
-          <div className="section-head">
-            <span className="section-kicker">Driver Overviews</span>
-            <h1>Every Driver Family, Explained in Plain English</h1>
-            <p style={{ fontSize: '1.1rem', maxWidth: '800px', margin: '12px auto' }}>
-              Drivers are simply translators between your software and your hardware. Explore each driver category to understand what it does, why it matters, and how to keep it working smoothly — no technical jargon required.
-            </p>
-          </div>
+      <section className="hero-section">
+        <div className="hero-container">
+          <span className="hero-kicker">Driver Overviews</span>
+          <h1 className="hero-h1">Every Driver Family, Explained in Plain English</h1>
+          <p className="hero-p">
+            Drivers are simply translators between your software and your hardware. Explore each driver category to understand what it does, why it matters, and how to keep it working smoothly — no technical jargon required.
+          </p>
         </div>
       </section>
 

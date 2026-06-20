@@ -22,15 +22,13 @@ const faqItems = [
 export default function Contact() {
   return (
     <>
-      <section className="block" style={{ background: 'var(--bg-light)', paddingTop: '30px', paddingBottom: '30px' }}>
-        <div className="container">
-          <div className="section-head">
-            <span className="section-kicker">Get in Touch</span>
-            <h1>Have a Question or <br />Topic Idea?</h1>
-            <p style={{ fontSize: '1.1rem', maxWidth: '800px', margin: '12px auto' }}>
-              We love hearing from our readers. Whether you have a question, a suggestion for a new topic, or just want to say hi, drop us a line below. We read every message and use your feedback to improve our guides.
-            </p>
-          </div>
+      <section className="hero-section">
+        <div className="hero-container">
+          <span className="hero-kicker">Get in Touch</span>
+          <h1 className="hero-h1">Have a Question or <br />Topic Idea?</h1>
+          <p className="hero-p">
+            We love hearing from our readers. Whether you have a question, a suggestion for a new topic, or just want to say hi, drop us a line below. We read every message and use your feedback to improve our guides.
+          </p>
         </div>
       </section>
 

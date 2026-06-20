@@ -20,15 +20,13 @@ const symptoms = [
 export default function Knowledge() {
   return (
     <>
-      <section className="block" style={{ background: 'var(--bg-light)', paddingTop: '30px', paddingBottom: '30px' }}>
-        <div className="container">
-          <div className="section-head">
-            <span className="section-kicker">Knowledge Hub</span>
-            <h1>Take a Breath. <br />Most Driver Problems Have a Simple Fix.</h1>
-            <p style={{ fontSize: '1.1rem', maxWidth: '800px', margin: '12px auto' }}>
-              A calm, ordered walkthrough for every common driver problem. Every symptom on this page links to a dedicated step-by-step fix overview — plain-English explanations, zero jargon walls, and zero downloads required.
-            </p>
-          </div>
+      <section className="hero-section">
+        <div className="hero-container">
+          <span className="hero-kicker">Knowledge Hub</span>
+          <h1 className="hero-h1">Take a Breath. <br />Most Driver Problems Have a Simple Fix.</h1>
+          <p className="hero-p">
+            A calm, ordered walkthrough for every common driver problem. Every symptom on this page links to a dedicated step-by-step fix overview — plain-English explanations, zero jargon walls, and zero downloads required.
+          </p>
         </div>
       </section>
 
