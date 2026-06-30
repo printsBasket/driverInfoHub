@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next"
+import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
@@ -604,7 +604,6 @@ export default function KernelModeArchitecture() {
                   border: "1px solid rgba(14,165,233,0.3)",
                   padding: "5px 16px", borderRadius: "9999px",
                   marginBottom: "20px",
-                  display: "inline-flex",
                 }}
               >
                 Key Takeaway
