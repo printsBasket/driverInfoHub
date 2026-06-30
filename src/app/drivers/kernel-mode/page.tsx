@@ -49,8 +49,8 @@ export default function KernelModeDriversPage() {
             <h2>The Privileged Layer That Runs Close to Hardware</h2>
             <p>Kernel-mode drivers execute in kernel space, sharing the same memory address space as the operating system kernel itself. This is the most privileged execution context on the computer.</p>
           </div>
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
-            <div className="card">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+              <div className="card">
               <h3>Direct Hardware Access</h3>
               <p>Kernel-mode drivers have unmediated access to physical memory, hardware registers, and I/O ports. This direct access is essential for operations that require minimal latency and maximum control over hardware behavior.</p>
             </div>
@@ -78,7 +78,7 @@ export default function KernelModeDriversPage() {
             <h2>Where You'll Find Kernel-Mode Drivers</h2>
             <p>These types of drivers require kernel-mode execution because they need direct hardware control and low-latency operation:</p>
           </div>
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <div>
               <h4>File System Drivers</h4>
               <p>Manage how data is read from and written to storage devices. NTFS, FAT32, and ext4 drivers operate in kernel mode to handle read/write operations with minimal overhead.</p>
@@ -107,40 +107,118 @@ export default function KernelModeDriversPage() {
         </div>
       </section>
 
-      {/* Why Kernel-Mode Matters Section */}
-      <section className="block">
-        <div className="container">
-          <div className="section-head">
-            <span className="section-kicker">Why It Matters</span>
-            <h2>Performance Comes With Responsibility</h2>
-            <p>Kernel-mode execution enables the performance and responsiveness you depend on, but it also carries significant risk:</p>
+     <section className="py-20 bg-slate-50">
+  <div className="container mx-auto px-4">
+    {/* Heading */}
+    <div className="text-center max-w-3xl mx-auto mb-14">
+      <span className="inline-flex px-4 py-2 rounded-full bg-red-100 text-red-700 text-sm font-medium">
+        Why It Matters
+      </span>
+
+      <h2 className="mt-4 text-4xl font-bold text-slate-900">
+        Performance Comes With Responsibility
+      </h2>
+
+      <p className="mt-4 text-slate-600">
+        Kernel-mode execution delivers maximum speed and hardware access, but
+        even a small bug can affect the entire operating system.
+      </p>
+    </div>
+
+    {/* Comparison Cards */}
+    <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      
+      {/* Advantages */}
+      <div className="bg-white rounded-3xl p-8 shadow-lg border border-green-100 hover:shadow-xl transition-all duration-300">
+        <div className="flex items-center gap-4 mb-6">
+          <div className="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center text-2xl">
+            🚀
           </div>
-          <div style={{ marginTop: '40px' }}>
-            <div className="grid grid-auto-2">
-              <div>
-                <h4>✓ Performance Advantages</h4>
-                <ul style={{ marginTop: '12px', paddingLeft: '20px', lineHeight: '1.8' }}>
-                  <li>No context switching overhead</li>
-                  <li>Direct memory access capabilities</li>
-                  <li>Interrupt handling without layer transitions</li>
-                  <li>Cache coherency control</li>
-                  <li>Real-time performance guarantees</li>
-                </ul>
-              </div>
-              <div>
-                <h4>✗ Stability Risks</h4>
-                <ul style={{ marginTop: '12px', paddingLeft: '20px', lineHeight: '1.8' }}>
-                  <li>Bugs can crash the entire system</li>
-                  <li>Memory corruption affects kernel</li>
-                  <li>No isolation from other drivers</li>
-                  <li>Infinite loops freeze all processors</li>
-                  <li>Resource leaks can cause system hang</li>
-                </ul>
-              </div>
-            </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-slate-900">
+              Performance Advantages
+            </h3>
+            <p className="text-slate-500 text-sm">
+              Why critical drivers run in kernel mode
+            </p>
           </div>
         </div>
-      </section>
+
+        <ul className="space-y-4">
+          {[
+            "No context switching overhead",
+            "Direct memory access capabilities",
+            "Interrupt handling without transitions",
+            "Cache coherency control",
+            "Real-time performance guarantees",
+          ].map((item) => (
+            <li key={item} className="flex items-start gap-3">
+              <span className="text-green-600 font-bold">✓</span>
+              <span className="text-slate-700">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Risks */}
+      <div className="bg-white rounded-3xl p-8 shadow-lg border border-red-100 hover:shadow-xl transition-all duration-300">
+        <div className="flex items-center gap-4 mb-6">
+          <div className="w-14 h-14 rounded-2xl bg-red-100 flex items-center justify-center text-2xl">
+            ⚠️
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-slate-900">
+              Stability Risks
+            </h3>
+            <p className="text-slate-500 text-sm">
+              The dangers of unrestricted access
+            </p>
+          </div>
+        </div>
+
+        <ul className="space-y-4">
+          {[
+            "Bugs can crash the entire system",
+            "Memory corruption affects the kernel",
+            "No isolation from other drivers",
+            "Infinite loops can freeze processors",
+            "Resource leaks may cause system hangs",
+          ].map((item) => (
+            <li key={item} className="flex items-start gap-3">
+              <span className="text-red-600 font-bold">✕</span>
+              <span className="text-slate-700">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    {/* Bottom Highlight */}
+    <div className="max-w-5xl mx-auto mt-12">
+      <div className="rounded-3xl bg-gradient-to-r from-blue-600 to-sky-500 text-white p-8 shadow-xl">
+        <div className="flex flex-col md:flex-row items-center gap-6">
+          <div className="text-5xl">🛡️</div>
+
+          <div>
+            <h3 className="text-2xl font-bold mb-2">
+              Why Kernel Drivers Require Extra Care
+            </h3>
+
+            <p className="text-red-100 leading-relaxed">
+              Kernel-mode drivers have unrestricted access to system memory,
+              hardware, and processor instructions. This power enables maximum
+              performance but also means a single faulty driver can trigger a
+              system crash (Blue Screen of Death), making driver quality and
+              testing extremely important.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* How Kernel-Mode Drivers Work Section */}
       <section className="block" style={{ background: 'var(--bg-light)' }}>
@@ -192,7 +270,7 @@ export default function KernelModeDriversPage() {
             <h2>How Operating Systems Protect Against Kernel-Mode Driver Failures</h2>
             <p>Despite the risks, modern operating systems have evolved multiple mechanisms to detect and contain kernel-mode driver problems:</p>
           </div>
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+        <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
             <div className="card">
               <h4>Driver Signing Requirements</h4>
               <p>Windows requires kernel-mode drivers to be digitally signed by a trusted certificate authority, preventing unsigned or tampered code from loading.</p>
@@ -228,10 +306,10 @@ export default function KernelModeDriversPage() {
               marginTop: '24px'
             }}>
               <thead>
-                <tr style={{ borderBottom: '2px solid var(--border-color)' }}>
-                  <th style={{ padding: '12px', textAlign: 'left', fontWeight: 'bold' }}>Aspect</th>
-                  <th style={{ padding: '12px', textAlign: 'left', fontWeight: 'bold' }}>Kernel-Mode</th>
-                  <th style={{ padding: '12px', textAlign: 'left', fontWeight: 'bold' }}>User-Mode</th>
+                <tr style={{ borderBottom: '2px solid var(--border-color)'}}>
+                  <th style={{ padding: '12px', textAlign: 'center', fontWeight: 'bold' }}>Aspect</th>
+                  <th style={{ padding: '12px', textAlign: 'center', fontWeight: 'bold' }}>Kernel-Mode</th>
+                  <th style={{ padding: '12px', textAlign: 'center', fontWeight: 'bold' }}>User-Mode</th>
                 </tr>
               </thead>
               <tbody>
@@ -278,7 +356,7 @@ export default function KernelModeDriversPage() {
             <span className="section-kicker">The Bottom Line</span>
             <h2>What You Should Remember About Kernel-Mode Drivers</h2>
           </div>
-          <div className="grid grid-auto-3" style={{ marginTop: '40px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <div className="card">
               <h4>1. Direct Power</h4>
               <p>Kernel-mode drivers have complete access to hardware. This enables high performance but eliminates safety boundaries.</p>
@@ -314,7 +392,7 @@ export default function KernelModeDriversPage() {
             <span className="section-kicker">Explore Related Topics</span>
             <h2>Learn More About Driver Types</h2>
           </div>
-          <div className="grid grid-auto-3" style={{ marginTop: '40px' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <Link href="/drivers/user-mode" className="card">
               <h4>User-Mode Drivers →</h4>
               <p>Safer drivers that run in isolated user space. A crash is contained and the OS simply restarts them.</p>

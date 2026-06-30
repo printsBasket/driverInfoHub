@@ -156,7 +156,7 @@ export default function Blog() {
       <section className="hero-section">
         <div className="hero-container">
           <span className="hero-kicker">The Driver Blog</span>
-          <h1 className="hero-h1">Friendly, Useful Reads About <br />How Your Computer Actually Works</h1>
+          <h2 className="hero-h2">Friendly, Useful Reads About <br />How Your Computer Actually Works</h2>
           <p className="hero-p">
             Plain-English articles, calm knowledge, and the occasional "wait, that's what it does?" moment. Written for curious users who want practical answers without getting buried in technical jargon.
           </p>
@@ -164,26 +164,74 @@ export default function Blog() {
       </section>
 
       {/* ══ WHAT YOU'LL FIND STRIP ══ */}
-      <section className="blog-find-strip">
-        <div className="container blog-find-inner">
-          <div className="blog-find-left">
-            <h3 className="blog-find-heading">What You&apos;ll Find</h3>
-            <p className="blog-find-sub">Helpful reads for everyday users</p>
-            <ul className="blog-find-list">
-              {finds.map(f => (
-                <li key={f} className="blog-find-item">
-                  <span className="blog-find-tick" aria-hidden="true">✓</span>
-                  {f}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="blog-find-card">
-            <span className="blog-new-pill">NEW ARTICLES ADDED REGULARLY</span>
-            <p className="blog-find-card-title">Learn Something Useful Today</p>
-            <p className="blog-find-card-desc">
-              Short reads, practical explanations, and helpful technology insights for everyday users.
-            </p>
+      <section className="block" style={{ background: 'var(--bg-light)', paddingTop: '64px', paddingBottom: '64px' }}>
+        <div className="container">
+          <div style={{
+            display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '48px', alignItems: 'center'
+          }}>
+            {/* Left Column */}
+            <div>
+              <span className="section-kicker">What You&apos;ll Find</span>
+              <h2 style={{ marginBottom: '16px' }}>Helpful reads for everyday users</h2>
+              <p style={{ marginBottom: '32px', fontSize: '1.1rem' }}>
+                We believe that understanding your computer shouldn&apos;t require a degree in computer science.
+              </p>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {finds.map((f, i) => (
+                  <div key={i} className="animate-fade-in hover:border-blue-500 hover:translate-x-1 transition-all duration-300" style={{
+                    display: 'flex', alignItems: 'center', gap: '16px',
+                    padding: '16px 24px', borderRadius: 'var(--radius-md)',
+                    background: '#fff', border: '1px solid var(--border)',
+                    boxShadow: 'var(--shadow-xs)'
+                  }}>
+                    <div style={{
+                      width: 32, height: 32, borderRadius: '50%', background: 'var(--primary-soft)',
+                      color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      fontWeight: 800, fontSize: '14px', flexShrink: 0
+                    }}>
+                      ✓
+                    </div>
+                    <span style={{ fontWeight: 600, color: 'var(--text-main)', fontSize: '1rem' }}>{f}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column */}
+            <div style={{
+              borderRadius: 'var(--radius-xl)',
+              background: 'linear-gradient(135deg, #0A0F1E 0%, #1C2540 100%)',
+              padding: '56px 48px', position: 'relative', overflow: 'hidden',
+              boxShadow: '0 32px 64px rgba(10,15,30,0.15)',
+              display: 'flex', flexDirection: 'column', justifyContent: 'center',
+              minHeight: '100%'
+            }}>
+              <div aria-hidden="true" style={{
+                position: 'absolute', top: '-80px', right: '-60px',
+                width: 300, height: 300, borderRadius: '50%',
+                background: 'radial-gradient(circle, rgba(37,99,235,0.2) 0%, transparent 70%)'
+              }} />
+              
+              <div style={{ position: 'relative', zIndex: 1 }}>
+                <span style={{
+                  display: 'inline-flex', alignItems: 'center', padding: '6px 14px',
+                  borderRadius: '9999px', background: 'rgba(255,255,255,0.1)',
+                  color: '#60A5FA', fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em',
+                  marginBottom: '24px', border: '1px solid rgba(96,165,250,0.2)'
+                }}>
+                  NEW ARTICLES ADDED REGULARLY
+                </span>
+                
+                <h3 style={{ color: '#fff', fontSize: '2rem', marginBottom: '16px', lineHeight: 1.2 }}>
+                  Learn Something Useful Today
+                </h3>
+                
+                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.1rem', lineHeight: 1.7, marginBottom: 0 }}>
+                  Short reads, practical explanations, and helpful technology insights for everyday users. No jargon, just clarity.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

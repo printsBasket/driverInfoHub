@@ -23,7 +23,7 @@ export default function Knowledge() {
       <section className="hero-section">
         <div className="hero-container">
           <span className="hero-kicker">Knowledge Hub</span>
-          <h1 className="hero-h1">Take a Breath. <br />Most Driver Problems Have a Simple Fix.</h1>
+          <h2 className="hero-h2">Take a Breath. <br />Most Driver Problems Have a Simple Fix.</h2>
           <p className="hero-p">
             A calm, ordered walkthrough for every common driver problem. Every symptom on this page links to a dedicated step-by-step fix overview — plain-English explanations, zero jargon walls, and zero downloads required.
           </p>

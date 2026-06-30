@@ -90,7 +90,7 @@ export default function GraphicsDrivers() {
             <p>Your graphics driver controls how fast your display redraws and at what resolution. Understanding these settings helps you get the best visual experience for your hardware.</p>
           </div>
 
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <div className="card">
               <h3>Refresh Rate (Hz)</h3>
               <p><strong>What it means:</strong> How many times per second your monitor redraws the image. Like frames per second, but for the display itself.</p>
@@ -144,7 +144,7 @@ export default function GraphicsDrivers() {
             <p>Your graphics driver is what detects, arranges, and displays content across multiple monitors. Here's how it all works.</p>
           </div>
 
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <div className="card">
               <h3>Connection Types</h3>
               <p><strong>HDMI:</strong> Most common, good for most monitors, limited to 60 Hz above 4K.</p>

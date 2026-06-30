@@ -90,7 +90,7 @@ export default function NetworkDrivers() {
             <p>Your network driver manages either Wi-Fi or Ethernet (or both). Understanding how each works helps you diagnose speed and stability issues.</p>
           </div>
 
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <div className="card">
               <h3>Ethernet (Wired)</h3>
               <p><strong>How it works:</strong> A physical cable connects your PC directly to a router or network jack. Data travels through the copper wire — no wireless interference.</p>
@@ -150,7 +150,7 @@ export default function NetworkDrivers() {
             <p>Network issues usually fall into a few categories. Here's how to pinpoint what's wrong with your driver.</p>
           </div>
 
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <div className="card">
               <h3>Wi-Fi Drops Every Few Minutes</h3>
               <p><strong>The culprit:</strong> Almost always power management. Windows aggressively powers down the Wi-Fi chip to save battery, and the driver doesn't wake it cleanly.</p>

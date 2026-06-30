@@ -102,7 +102,7 @@ export default function AudioDrivers() {
             <p>Audio on your computer is stored and transmitted in different formats. Understanding the basics helps you diagnose sound quality issues and match your hardware to what it's actually capable of.</p>
           </div>
 
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <div className="card">
               <h3>Sample Rate (Hz)</h3>
               <p><strong>What it means:</strong> How many times per second the audio is sampled (measured) to create digital sound. Like the frames in a video — more samples = more detail.</p>
@@ -152,8 +152,8 @@ export default function AudioDrivers() {
             <p>Sound issues usually fall into a handful of categories. Here's how to pinpoint what's wrong and fix it.</p>
           </div>
 
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
-            <div className="card">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+              <div className="card">
               <h3>No Sound at All</h3>
               <p><strong>Check first:</strong> Is the volume slider muted? Is the correct speaker selected in sound settings? Is the device actually connected and powered on?</p>
               <p style={{ marginTop: '12px' }}><strong>If basics pass:</strong> Reinstall the audio driver from Device Manager. Uninstall, restart, and install the latest version from your PC or sound card maker.</p>

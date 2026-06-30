@@ -49,7 +49,7 @@ export default function InputDevicesPage() {
             <h2>The Translation Layer Between You and Your Computer</h2>
             <p>Every time you press a key, move a mouse, or touch a screen, an input device driver is interpreting that physical action and converting it into digital signals your OS can understand.</p>
           </div>
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+ <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <div className="card">
               <h3>Physical Signal Translation</h3>
               <p>Input devices send raw electrical signals. Drivers interpret these signals and convert them into standardized events (key press, mouse movement, button click, etc.).</p>
@@ -78,7 +78,7 @@ export default function InputDevicesPage() {
             <h2>Different Input Devices, Different Drivers</h2>
             <p>Input devices range from basic keyboard and mouse to advanced gesture-enabled touchpads and gaming peripherals:</p>
           </div>
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <div className="card">
               <h4>Keyboards</h4>
               <p><strong>Standard:</strong> USB HID<br/>
@@ -159,7 +159,7 @@ export default function InputDevicesPage() {
             <h2>Generic Drivers vs. Vendor-Specific Drivers</h2>
             <p>Most basic input devices work with Windows's built-in HID drivers. Advanced features require manufacturer-specific drivers:</p>
           </div>
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <div>
               <h4>✓ Built-in Generic Drivers</h4>
               <ul style={{ marginTop: '12px', paddingLeft: '20px', lineHeight: '2' }}>
@@ -191,7 +191,7 @@ export default function InputDevicesPage() {
             <span className="section-kicker">Advanced Capabilities</span>
             <h2>What Premium Input Drivers Enable</h2>
           </div>
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <div className="card">
               <h4>Programmable Buttons</h4>
               <p>Advanced mice allow remapping buttons to different functions. Drivers store these remappings in device memory.</p>
@@ -315,7 +315,7 @@ export default function InputDevicesPage() {
             <span className="section-kicker">Best Practices</span>
             <h2>Getting the Most From Your Input Devices</h2>
           </div>
-          <div className="grid grid-auto-3" style={{ marginTop: '40px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <div className="card">
               <h4>1. Install Vendor Drivers</h4>
               <p>For gaming mice, trackpads, and specialized controllers, install the manufacturer's driver software for full feature access.</p>
@@ -351,7 +351,7 @@ export default function InputDevicesPage() {
             <span className="section-kicker">The Bottom Line</span>
             <h2>What You Should Remember About Input Drivers</h2>
           </div>
-          <div className="grid grid-auto-3" style={{ marginTop: '40px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <div className="card">
               <h4>1. Often Invisible</h4>
               <p>Most input devices work with generic drivers you never install. They just work.</p>
@@ -387,8 +387,7 @@ export default function InputDevicesPage() {
             <span className="section-kicker">Explore Related Topics</span>
             <h2>Learn More About Drivers</h2>
           </div>
-          <div className="grid grid-auto-3" style={{ marginTop: '40px' }}>
-            <Link href="/drivers/usb" className="card">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">            <Link href="/drivers/usb" className="card">
               <h4>USB Drivers →</h4>
               <p>Input devices communicate through USB. USB drivers are the foundation for all USB input.</p>
             </Link>

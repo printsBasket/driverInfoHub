@@ -37,10 +37,10 @@ export default function Home() {
             </div>
 
             {/* Headline */}
-            <h1 className="home-hero-h1">
+            <h2 className="home-hero-h2">
               Printer Drivers,
               <span className="home-hero-gradient"> Explained Clearly.</span>
-            </h1>
+            </h2>
 
 
             <p className="home-hero-p">

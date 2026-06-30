@@ -49,8 +49,8 @@ export default function ChipsetDriversPage() {
             <h2>More Than Just a Driver — The Heart of Your Computer</h2>
             <p>Your motherboard's chipset is a collection of specialized microchips that form the nervous system of your computer, managing how every component talks to every other component. Chipset drivers make this happen.</p>
           </div>
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
-            <div className="card">
+<div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+              <div className="card">
               <h3>Central Hub Architecture</h3>
               <p>The chipset sits between the CPU and all other components. It routes data traffic, manages power distribution, and coordinates resource allocation across your entire system.</p>
             </div>
@@ -150,7 +150,7 @@ export default function ChipsetDriversPage() {
             <h2>Why Chipset Drivers Are Installation Priority #1</h2>
             <p>Professional system builders always install chipset drivers first, before any other drivers. Here's why:</p>
           </div>
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <div className="card">
               <h4>Storage Detection</h4>
               <p>Without chipset drivers, the OS can't detect your hard drives or SSDs. You can't install the operating system or access your files.</p>
@@ -187,7 +187,7 @@ export default function ChipsetDriversPage() {
             <h2>Common Chipsets and Their Drivers</h2>
             <p>Different motherboard manufacturers use chipsets made by Intel, AMD, and others. Each has its own driver ecosystem:</p>
           </div>
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+        <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
             <div className="card">
               <h4>Intel Chipsets</h4>
               <p><strong>Z790, Z690, H770, H670</strong> (newer)<br/>
@@ -302,8 +302,8 @@ export default function ChipsetDriversPage() {
             <span className="section-kicker">The Bottom Line</span>
             <h2>What You Should Remember About Chipset Drivers</h2>
           </div>
-          <div className="grid grid-auto-3" style={{ marginTop: '40px' }}>
-            <div className="card">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+              <div className="card">
               <h4>1. Installation First</h4>
               <p>Always install chipset drivers before any other drivers. They're the foundation everything else depends on.</p>
             </div>
@@ -338,8 +338,8 @@ export default function ChipsetDriversPage() {
             <span className="section-kicker">Explore Related Topics</span>
             <h2>Learn More About System Drivers</h2>
           </div>
-          <div className="grid grid-auto-3" style={{ marginTop: '40px' }}>
-            <Link href="/drivers/storage" className="card">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+              <Link href="/drivers/storage" className="card">
               <h4>Storage Drivers →</h4>
               <p>File system and disk drivers depend on chipset. They work together to manage your storage devices.</p>
             </Link>
@@ -367,24 +367,54 @@ export default function ChipsetDriversPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="block">
-        <div className="container">
-          <div style={{
-            textAlign: 'center',
-            padding: '40px',
-            borderRadius: 'var(--radius-md)',
-            background: 'var(--primary-light)',
-            color: 'var(--text-dark)'
-          }}>
-            <h3>Ready to Explore All Driver Types?</h3>
-            <p style={{ marginTop: '12px', marginBottom: '24px' }}>Understand every driver category and how they work together to power your computer.</p>
-            <Link href="/drivers" className="btn-primary" style={{ display: 'inline-block' }}>
-              Browse All Driver Types
-            </Link>
-          </div>
+      <section className="py-20">
+  <div className="container mx-auto px-4">
+    <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 px-8 py-16 text-center shadow-2xl">
+
+      {/* Decorative Blur */}
+      <div className="absolute -top-10 -left-10 h-40 w-40 rounded-full bg-white/10 blur-3xl"></div>
+      <div className="absolute -bottom-10 -right-10 h-40 w-40 rounded-full bg-white/10 blur-3xl"></div>
+
+      <div className="relative z-10 max-w-3xl mx-auto">
+        <span className="inline-flex items-center rounded-full bg-white/15 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
+          Driver Knowledge Hub
+        </span>
+
+        <h3 className="mt-6 text-4xl font-bold text-white">
+          Ready to Explore All Driver Types?
+        </h3>
+
+        <p className="mt-4 text-lg text-blue-100 leading-relaxed">
+          Discover every driver category and learn how they work together to
+          power your computer's hardware, performance, and connectivity.
+        </p>
+
+        <div className="mt-8">
+          <Link
+            href="/drivers"
+            className="group inline-flex items-center gap-3 rounded-xl bg-white px-8 py-4 text-base font-semibold text-blue-700 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+          >
+            Browse All Driver Types
+
+            <svg
+              className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </Link>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
     </>
   )
 }

@@ -30,7 +30,7 @@ export default function Drivers() {
       <section className="hero-section">
         <div className="hero-container">
           <span className="hero-kicker">Driver Overviews</span>
-          <h1 className="hero-h1">Every Driver Family, Explained in Plain English</h1>
+          <h2 className="hero-h2">Every Driver Family, Explained in Plain English</h2>
           <p className="hero-p">
             Drivers are simply translators between your software and your hardware. Explore each driver category to understand what it does, why it matters, and how to keep it working smoothly — no technical jargon required.
           </p>
@@ -96,7 +96,7 @@ export default function Drivers() {
             <p>Explore the deeper layers of driver technology. Understand privilege levels, driver isolation, and the differences between kernel and user mode.</p>
           </div>
           
-          <div className="grid grid-auto-3" style={{ marginTop: '20px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <Link href="/drivers/kernel-mode" className="card">
               <h4>Kernel-Mode Drivers →</h4>
               <p><strong>Privileged execution.</strong> Direct hardware access with system-wide responsibility. Essential for storage and GPU, but risky.</p>
@@ -349,7 +349,7 @@ export default function Drivers() {
           </div>
 
           <div style={{ marginTop: '20px' }}>
-            <div className="grid grid-auto-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
               <div className="card">
                 <h3>✓ Step 1: Know What You're Updating</h3>
                 <p>Use Device Manager (Windows) or System Report (Mac/Linux) to identify exactly which driver you need to update. Write down the device name, model, and current driver version.</p>
@@ -473,7 +473,7 @@ export default function Drivers() {
           </div>
 
           <div style={{ marginTop: '20px' }}>
-            <div className="grid grid-auto-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
               <div className="card">
                 <h3>"Device Not Found" or "Unknown Device"</h3>
                 <p><strong>What it means:</strong> Windows can't figure out what hardware this is, so it can't load the right driver.</p>
@@ -523,8 +523,8 @@ export default function Drivers() {
             <p>If you're just learning about drivers, here's the best path forward.</p>
           </div>
 
-          <div className="grid grid-auto-3" style={{ marginTop: '20px' }}>
-            <div className="card">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+              <div className="card">
               <h3>1. Learn the Basics</h3>
               <p>Start with the driver category guides above. Pick one that matches a device you actually use (your printer, graphics card, network adapter). Reading about drivers you interact with makes it all click faster.</p>
             </div>

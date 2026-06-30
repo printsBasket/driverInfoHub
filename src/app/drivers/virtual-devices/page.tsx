@@ -49,7 +49,7 @@ export default function VirtualDeviceDriversPage() {
             <h2>Software That Pretends to Be Hardware</h2>
             <p>Virtual device drivers create software abstractions that act like hardware from the application's perspective. They accept the same commands and generate the same responses as real hardware, but it's all happening in software.</p>
           </div>
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <div className="card">
               <h3>Hardware Abstraction</h3>
               <p>Virtual drivers implement the same interface as real hardware. An application trying to send data to a virtual network adapter can't tell it's not real because the API is identical.</p>
@@ -78,7 +78,7 @@ export default function VirtualDeviceDriversPage() {
             <h2>Where Virtual Drivers Are Used</h2>
             <p>Virtual device drivers enable many software technologies you probably use every day:</p>
           </div>
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <div className="card">
               <h4>Virtual Machines (VMs)</h4>
               <p>Hypervisor-based virtual machines use virtual drivers for networking, storage, and display. Guest OSes see virtual hardware that the hypervisor actually manages.</p>
@@ -186,8 +186,8 @@ export default function VirtualDeviceDriversPage() {
             <span className="section-kicker">Game Emulation</span>
             <h2>Virtual Hardware in Emulators</h2>
             <p>Game emulators use virtual device drivers to simulate console hardware:</p>
-          </div>
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+          </div><div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+          
             <div className="card">
               <h4>CPU Emulation</h4>
               <p>The emulator creates a virtual CPU that mimics the original console's processor. Each instruction is translated to run on the host CPU.</p>
@@ -224,7 +224,7 @@ export default function VirtualDeviceDriversPage() {
             <h2>The Cost of Virtualization</h2>
             <p>Virtual drivers add overhead compared to direct hardware access. Understanding this trade-off is important:</p>
           </div>
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <div className="card">
               <h4>Translation Overhead</h4>
               <p>Every request must be translated from the guest's format to what the real hardware (or host OS) understands. This takes CPU cycles.</p>
@@ -256,7 +256,7 @@ export default function VirtualDeviceDriversPage() {
             <span className="section-kicker">Trade-offs</span>
             <h2>Benefits vs. Costs of Virtual Drivers</h2>
           </div>
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <div>
               <h4>✓ Major Advantages</h4>
               <ul style={{ marginTop: '12px', paddingLeft: '20px', lineHeight: '2' }}>
@@ -292,7 +292,7 @@ export default function VirtualDeviceDriversPage() {
             <span className="section-kicker">The Future</span>
             <h2>Where Virtual Drivers Are Heading</h2>
           </div>
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <div className="card">
               <h4>GPU Pass-through</h4>
               <p>Instead of simulating GPUs, VMs are getting direct access to host GPUs for near-native gaming and 3D performance.</p>
@@ -320,8 +320,7 @@ export default function VirtualDeviceDriversPage() {
             <span className="section-kicker">The Bottom Line</span>
             <h2>What You Should Remember About Virtual Drivers</h2>
           </div>
-          <div className="grid grid-auto-3" style={{ marginTop: '40px' }}>
-            <div className="card">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">            <div className="card">
               <h4>1. Software Hardware</h4>
               <p>Virtual drivers present a hardware interface through pure software logic.</p>
             </div>
@@ -356,7 +355,7 @@ export default function VirtualDeviceDriversPage() {
             <span className="section-kicker">Explore Related Topics</span>
             <h2>Learn More About Drivers</h2>
           </div>
-          <div className="grid grid-auto-3" style={{ marginTop: '40px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <Link href="/drivers/network" className="card">
               <h4>Network Drivers →</h4>
               <p>VPNs use virtual network drivers. Understanding real network drivers shows the abstraction.</p>

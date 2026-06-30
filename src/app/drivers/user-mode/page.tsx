@@ -78,8 +78,8 @@ export default function UserModeDriversPage() {
             <h2>Where You'll Find User-Mode Drivers</h2>
             <p>These devices use user-mode drivers because their performance requirements don't demand kernel-level access:</p>
           </div>
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
-            <div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+              <div>
               <h4>Printers and Scanners</h4>
               <p>Print and scan operations don't require real-time performance. The user-mode driver prepares data, sends it through the kernel's USB subsystem, and handles status reporting.</p>
             </div>
@@ -107,41 +107,109 @@ export default function UserModeDriversPage() {
         </div>
       </section>
 
-      {/* Why User-Mode Matters Section */}
-      <section className="block">
-        <div className="container">
-          <div className="section-head">
-            <span className="section-kicker">Why It Matters</span>
-            <h2>The Stability-Performance Trade-Off</h2>
-            <p>User-mode drivers sacrifice some performance for significant stability gains:</p>
+      <section className="py-20 bg-slate-50">
+  <div className="container mx-auto px-4">
+    <div className="text-center max-w-3xl mx-auto mb-14">
+      <span className="inline-flex px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium">
+        Why It Matters
+      </span>
+
+      <h2 className="mt-4 text-4xl font-bold text-slate-900">
+        The Stability vs Performance Trade-Off
+      </h2>
+
+      <p className="mt-4 text-slate-600">
+        User-mode drivers prioritize system stability and security while
+        accepting a small performance overhead.
+      </p>
+    </div>
+
+    <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      
+      {/* Stability Card */}
+      <div className="bg-white rounded-3xl p-8 shadow-lg border border-green-100 hover:shadow-xl transition-all duration-300">
+        <div className="flex items-center gap-4 mb-6">
+          <div className="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center text-2xl">
+            ✅
           </div>
-          <div style={{ marginTop: '40px' }}>
-            <div className="grid grid-auto-2">
-              <div>
-                <h4>✓ Stability Advantages</h4>
-                <ul style={{ marginTop: '12px', paddingLeft: '20px', lineHeight: '1.8' }}>
-                  <li>Driver crashes are contained</li>
-                  <li>No system-wide instability</li>
-                  <li>Can be restarted without reboot</li>
-                  <li>Memory corruption is isolated</li>
-                  <li>Improves overall system reliability</li>
-                </ul>
-              </div>
-              <div>
-                <h4>⟳ Performance Trade-offs</h4>
-                <ul style={{ marginTop: '12px', paddingLeft: '20px', lineHeight: '1.8' }}>
-                  <li>User-kernel boundary crossings</li>
-                  <li>Context switch overhead</li>
-                  <li>Additional latency in I/O operations</li>
-                  <li>Cannot directly handle interrupts</li>
-                  <li>Data copying between address spaces</li>
-                </ul>
-              </div>
-            </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-slate-900">
+              Stability Advantages
+            </h3>
+            <p className="text-slate-500 text-sm">
+              Safer and more reliable operation
+            </p>
           </div>
         </div>
-      </section>
 
+        <ul className="space-y-4">
+          {[
+            "Driver crashes are contained",
+            "No system-wide instability",
+            "Can be restarted without reboot",
+            "Memory corruption is isolated",
+            "Improves overall system reliability",
+          ].map((item) => (
+            <li key={item} className="flex items-start gap-3">
+              <span className="text-green-600 mt-1">✔</span>
+              <span className="text-slate-700">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Performance Card */}
+      <div className="bg-white rounded-3xl p-8 shadow-lg border border-orange-100 hover:shadow-xl transition-all duration-300">
+        <div className="flex items-center gap-4 mb-6">
+          <div className="w-14 h-14 rounded-2xl bg-orange-100 flex items-center justify-center text-2xl">
+            ⚡
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-slate-900">
+              Performance Trade-Offs
+            </h3>
+            <p className="text-slate-500 text-sm">
+              Small overhead for improved stability
+            </p>
+          </div>
+        </div>
+
+        <ul className="space-y-4">
+          {[
+            "User-kernel boundary crossings",
+            "Context switch overhead",
+            "Additional latency in I/O operations",
+            "Cannot directly handle interrupts",
+            "Data copying between address spaces",
+          ].map((item) => (
+            <li key={item} className="flex items-start gap-3">
+              <span className="text-orange-500 mt-1">•</span>
+              <span className="text-slate-700">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    {/* Bottom Summary */}
+    <div className="max-w-4xl mx-auto mt-12">
+      <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-3xl p-8 text-center shadow-xl">
+        <h3 className="text-2xl font-semibold mb-3">
+          Why Modern Operating Systems Prefer User-Mode Drivers
+        </h3>
+
+        <p className="text-blue-100 leading-relaxed">
+          A slight performance cost is usually worth the significant gain in
+          system stability, security, and reliability. That's why modern
+          platforms increasingly move drivers out of the kernel whenever
+          possible.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
       {/* How User-Mode Drivers Work Section */}
       <section className="block" style={{ background: 'var(--bg-light)' }}>
         <div className="container">
@@ -202,7 +270,7 @@ export default function UserModeDriversPage() {
             <h2>Device Frameworks for User-Mode Drivers</h2>
             <p>Modern operating systems provide frameworks that make user-mode driver development practical:</p>
           </div>
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+        <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
             <div className="card">
               <h4>Windows UMDF</h4>
               <p>The User-Mode Driver Framework provides APIs for printers, scanners, cameras, and USB devices. Drivers are C++ COM objects with clear lifecycle management.</p>
@@ -235,13 +303,14 @@ export default function UserModeDriversPage() {
             <table style={{
               width: '100%',
               borderCollapse: 'collapse',
-              marginTop: '24px'
+              marginTop: '24px',
+              textAlign: 'center'
             }}>
               <thead>
-                <tr style={{ borderBottom: '2px solid var(--border-color)' }}>
-                  <th style={{ padding: '12px', textAlign: 'left', fontWeight: 'bold' }}>Aspect</th>
-                  <th style={{ padding: '12px', textAlign: 'left', fontWeight: 'bold' }}>User-Mode</th>
-                  <th style={{ padding: '12px', textAlign: 'left', fontWeight: 'bold' }}>Kernel-Mode</th>
+                <tr style={{ borderBottom: '2px solid var(--border-color)', 'textAlign': 'center' }}>
+                  <th style={{ padding: '12px', textAlign: 'center', fontWeight: 'bold' }}>Aspect</th>
+                  <th style={{ padding: '12px', textAlign: 'center', fontWeight: 'bold' }}>User-Mode</th>
+                  <th style={{ padding: '12px', textAlign: 'center', fontWeight: 'bold' }}>Kernel-Mode</th>
                 </tr>
               </thead>
               <tbody>
@@ -288,8 +357,7 @@ export default function UserModeDriversPage() {
             <span className="section-kicker">Development Benefits</span>
             <h2>Why Developers Choose User-Mode When Possible</h2>
           </div>
-          <div className="grid grid-auto-3" style={{ marginTop: '40px' }}>
-            <div className="card">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">            <div className="card">
               <h4>Simpler Debugging</h4>
               <p>User-mode code runs with standard debugging tools. Kernel-mode debugging requires specialized equipment and expertise.</p>
             </div>
@@ -324,8 +392,7 @@ export default function UserModeDriversPage() {
             <span className="section-kicker">The Bottom Line</span>
             <h2>What You Should Remember About User-Mode Drivers</h2>
           </div>
-          <div className="grid grid-auto-3" style={{ marginTop: '40px' }}>
-            <div className="card">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">            <div className="card">
               <h4>1. Safe by Design</h4>
               <p>Hardware-enforced memory boundaries mean a user-mode driver crash affects only that driver, never the system.</p>
             </div>
@@ -360,8 +427,7 @@ export default function UserModeDriversPage() {
             <span className="section-kicker">Explore Related Topics</span>
             <h2>Learn More About Driver Types</h2>
           </div>
-          <div className="grid grid-auto-3" style={{ marginTop: '40px' }}>
-            <Link href="/drivers/kernel-mode" className="card">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">            <Link href="/drivers/kernel-mode" className="card">
               <h4>Kernel-Mode Drivers →</h4>
               <p>Privileged drivers with direct hardware access. Necessary for storage and GPU, but riskier than user-mode alternatives.</p>
             </Link>

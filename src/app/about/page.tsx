@@ -68,7 +68,7 @@ export default function About() {
       <section className="hero-section">
         <div className="hero-container">
           <span className="hero-kicker">About Driver Info Hub</span>
-          <h1 className="hero-h1">We Translate the Technical, <br />So You Can Get On With Your Day</h1>
+          <h2 className="hero-h2">We Translate the Technical, <br />So You Can Get On With Your Day</h2>
           <p className="hero-p">
             Driver Info Hub is a small, independent education project with one stubborn belief: technology should not feel intimidating. Every guide here is written for beginners while still being useful for advanced users who want clarity without noise.
           </p>

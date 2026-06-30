@@ -49,7 +49,7 @@ export default function StorageDriversPage() {
             <h2>The Silent Workers Behind Your Files</h2>
             <p>Every time you save a file, load an application, or access a photo, a storage driver is working in the background. These drivers are critical to both performance and data safety.</p>
           </div>
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <div className="card">
               <h3>Protocol Translation</h3>
               <p>Storage drivers translate file system requests into device-specific commands. An SSD understands NVMe commands; an HDD understands SATA; your driver speaks both languages.</p>
@@ -78,7 +78,7 @@ export default function StorageDriversPage() {
             <h2>Different Storage, Different Drivers</h2>
             <p>Each storage device type requires different driver support because they use different communication protocols:</p>
           </div>
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <div className="card">
               <h4>Hard Disk Drives (HDD)</h4>
               <p><strong>Protocol:</strong> SATA or older IDE<br/>
@@ -170,7 +170,7 @@ export default function StorageDriversPage() {
             <h2>How Storage Drivers Maximize Speed</h2>
             <p>Modern storage drivers implement several techniques to improve performance beyond raw hardware capabilities:</p>
           </div>
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <div className="card">
               <h4>Native Command Queuing (NCQ)</h4>
               <p>SATA drives support NCQ, allowing multiple commands to be queued and executed out-of-order for optimal mechanical efficiency. Drivers must support this to achieve maximum SATA SSD performance.</p>
@@ -244,7 +244,7 @@ export default function StorageDriversPage() {
             <h2>When and Why to Update Storage Drivers</h2>
             <p>Storage driver updates are often overlooked, but they can significantly impact performance and reliability:</p>
           </div>
-          <div className="grid grid-auto-2" style={{ marginTop: '40px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <div className="card">
               <h4>Performance Improvements</h4>
               <p>New drivers optimize queue management and command scheduling, potentially doubling throughput on the same hardware.</p>
@@ -317,8 +317,7 @@ export default function StorageDriversPage() {
             <span className="section-kicker">The Bottom Line</span>
             <h2>What You Should Remember About Storage Drivers</h2>
           </div>
-          <div className="grid grid-auto-3" style={{ marginTop: '40px' }}>
-            <div className="card">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">            <div className="card">
               <h4>1. Silent But Critical</h4>
               <p>Every file read and write goes through a storage driver. They're invisible but essential.</p>
             </div>
@@ -353,8 +352,7 @@ export default function StorageDriversPage() {
             <span className="section-kicker">Explore Related Topics</span>
             <h2>Learn More About System Drivers</h2>
           </div>
-          <div className="grid grid-auto-3" style={{ marginTop: '40px' }}>
-            <Link href="/drivers/chipset" className="card">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">            <Link href="/drivers/chipset" className="card">
               <h4>Chipset Drivers →</h4>
               <p>Chipset drivers manage the controllers that storage drivers depend on.</p>
             </Link>
