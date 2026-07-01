@@ -136,7 +136,7 @@ export default function SiteMapPage() {
 
           <ChevronRight className="h-4 w-4" />
 
-          <Link href="/legal" className="hover:text-cyan-600 transition">
+          <Link href="/legal/" className="hover:text-cyan-600 transition">
             Legal
           </Link>
 

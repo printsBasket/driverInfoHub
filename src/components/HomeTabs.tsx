@@ -15,7 +15,7 @@ export default function HomeTabs() {
         </div>
 
         <div className="tab-switcher">
-          <div className="tab-switcher-nav" role="tablist">
+          <div className="tab-switcher-nav show-on-desktop" role="tablist">
             <button
               className={`tab-switcher-btn ${activeTab === 'translator' ? 'active' : ''}`}
               onClick={() => setActiveTab('translator')}
@@ -71,22 +71,109 @@ export default function HomeTabs() {
           </div>
 
           <div className="tab-switcher-panels">
-            {activeTab === 'translator' && (
-              <div className="tab-switcher-panel active" role="tabpanel">
-                <div className="tab-panel-grid">
+            {/* Desktop view: show only active tab */}
+            <div className="show-on-desktop">
+              {activeTab === 'translator' && (
+                <div className="tab-switcher-panel active" role="tabpanel">
+                  <div className="tab-panel-grid">
+                    <div className="tab-panel-text">
+                      <h3>The Friendly Translator</h3>
+                      <p>
+                        Picture this: you hit "Print." Your document jumps from your screen straight onto paper. But here's the secret — your computer and your device don't actually speak the same language. The driver is the tiny, invisible piece of software in the middle, making sure both sides understand each other clearly.
+                      </p>
+                      <p>
+                        Every piece of hardware connected to your computer — keyboards, speakers, webcams, hard drives, even the screen you're reading this on — needs its own translator. Without one, your operating system would simply shrug and say, "Sorry, I have no idea what that thing is."
+                      </p>
+                      <p>
+                        The clever part? Hardware makers and OS designers agreed long ago on shared "rulebooks" that drivers must follow. That's why the same app can print to thousands of different devices — each device's driver speaks the same shared dialect with the OS.
+                      </p>
+                    </div>
+                    <aside className="tab-panel-aside">
+                      <h4>In one breath</h4>
+                      <ul className="tab-panel-aside-list ticks">
+                        <li>A driver is a translator between hardware and your OS.</li>
+                        <li>Every device needs one — keyboards, GPUs, devices, all of it.</li>
+                        <li>Standards keep thousands of devices working with one OS.</li>
+                      </ul>
+                    </aside>
+                  </div>
+                </div>
+              )}
+
+              {activeTab === 'care' && (
+                <div className="tab-switcher-panel active" role="tabpanel">
+                  <div className="tab-panel-grid">
+                    <div className="tab-panel-text">
+                      <h3>Why You Should Actually Care</h3>
+                      <p>
+                        Drivers quietly decide how good (or how frustrating) your computer feels every day. Smooth video calls? A happy webcam driver. Crisp speaker sound? An audio driver doing its homework. Lag-free games? A graphics driver firing on all cylinders. When drivers are healthy, you don't notice them — and that's exactly the point.
+                      </p>
+                      <p>
+                        Now flip it. A grumpy or outdated driver can make a fast laptop feel like it's stuck in molasses, or be the reason an app suddenly stops responding at the worst possible moment. Because drivers run with deep system access, when they misbehave they can affect the whole operating system.
+                      </p>
+                      <p>
+                        The good news: keeping drivers in shape is one of the easiest, highest-impact things you can do for your PC. A small update can mean smoother gameplay, better battery life, steadier performance, and even small reliability improvements you didn't know about.
+                      </p>
+                    </div>
+                    <aside className="tab-panel-aside">
+                      <h4>Daily impact</h4>
+                      <ul className="tab-panel-aside-list ticks">
+                        <li>Healthy drivers = smooth, invisible experience.</li>
+                        <li>Outdated drivers = sluggishness, instability, and unexpected restarts.</li>
+                        <li>Updating is the easiest free performance upgrade.</li>
+                      </ul>
+                    </aside>
+                  </div>
+                </div>
+              )}
+
+              {activeTab === 'how' && (
+                <div className="tab-switcher-panel active" role="tabpanel">
+                  <div className="tab-panel-grid">
+                    <div className="tab-panel-text">
+                      <h3>How It All Works (Without the Headache)</h3>
+                      <p>
+                        Follow a simple click. You press "Save." Your app whispers "save this file" to the operating system. The OS turns to the storage driver and says, "Hey, can you handle this?" The driver translates that polite request into the exact electrical signals your hard drive understands. Done — your file is safe. All of this happens in less time than a blink.
+                      </p>
+                      <p>
+                        Behind the scenes, drivers are stacked like a relay team. Each one has its own job — one talks to the device, another tidies up the data, one handles the physical connection (USB, Wi-Fi, you name it). The request passes runner to runner until it reaches the hardware, and the answer travels back the same way.
+                      </p>
+                      <p>
+                        What's wild is the speed. A typical request bounces through this whole relay in microseconds. You experience it as "instant," but a tiny, very organized conversation just took place.
+                      </p>
+                    </div>
+                    <aside className="tab-panel-aside">
+                      <h4>The relay race</h4>
+                      <ul className="tab-panel-aside-list ticks">
+                        <li>Apps speak to the OS using friendly APIs.</li>
+                        <li>The OS hands work to the right driver.</li>
+                        <li>The driver speaks the device's exact dialect.</li>
+                        <li>Replies travel back up the same stack.</li>
+                      </ul>
+                    </aside>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Mobile view: show all tabs vertically */}
+            <div className="show-on-mobile" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              {/* The Translator */}
+              <div className="tab-switcher-panel" role="tabpanel">
+                <div className="tab-panel-grid" style={{ gridTemplateColumns: '1fr' }}>
                   <div className="tab-panel-text">
-                    <h3>The Friendly Translator</h3>
-                    <p>
+                    <h3 style={{ marginBottom: '12px' }}>The Translator</h3>
+                    <p style={{ marginBottom: '12px' }}>
                       Picture this: you hit "Print." Your document jumps from your screen straight onto paper. But here's the secret — your computer and your device don't actually speak the same language. The driver is the tiny, invisible piece of software in the middle, making sure both sides understand each other clearly.
                     </p>
-                    <p>
+                    <p style={{ marginBottom: '12px' }}>
                       Every piece of hardware connected to your computer — keyboards, speakers, webcams, hard drives, even the screen you're reading this on — needs its own translator. Without one, your operating system would simply shrug and say, "Sorry, I have no idea what that thing is."
                     </p>
                     <p>
                       The clever part? Hardware makers and OS designers agreed long ago on shared "rulebooks" that drivers must follow. That's why the same app can print to thousands of different devices — each device's driver speaks the same shared dialect with the OS.
                     </p>
                   </div>
-                  <aside className="tab-panel-aside">
+                  <aside className="tab-panel-aside" style={{ marginTop: '16px' }}>
                     <h4>In one breath</h4>
                     <ul className="tab-panel-aside-list ticks">
                       <li>A driver is a translator between hardware and your OS.</li>
@@ -96,24 +183,23 @@ export default function HomeTabs() {
                   </aside>
                 </div>
               </div>
-            )}
 
-            {activeTab === 'care' && (
-              <div className="tab-switcher-panel active" role="tabpanel">
-                <div className="tab-panel-grid">
+              {/* Why You Care */}
+              <div className="tab-switcher-panel" role="tabpanel">
+                <div className="tab-panel-grid" style={{ gridTemplateColumns: '1fr' }}>
                   <div className="tab-panel-text">
-                    <h3>Why You Should Actually Care</h3>
-                    <p>
+                    <h3 style={{ marginBottom: '12px' }}>Why You Care</h3>
+                    <p style={{ marginBottom: '12px' }}>
                       Drivers quietly decide how good (or how frustrating) your computer feels every day. Smooth video calls? A happy webcam driver. Crisp speaker sound? An audio driver doing its homework. Lag-free games? A graphics driver firing on all cylinders. When drivers are healthy, you don't notice them — and that's exactly the point.
                     </p>
-                    <p>
+                    <p style={{ marginBottom: '12px' }}>
                       Now flip it. A grumpy or outdated driver can make a fast laptop feel like it's stuck in molasses, or be the reason an app suddenly stops responding at the worst possible moment. Because drivers run with deep system access, when they misbehave they can affect the whole operating system.
                     </p>
                     <p>
                       The good news: keeping drivers in shape is one of the easiest, highest-impact things you can do for your PC. A small update can mean smoother gameplay, better battery life, steadier performance, and even small reliability improvements you didn't know about.
                     </p>
                   </div>
-                  <aside className="tab-panel-aside">
+                  <aside className="tab-panel-aside" style={{ marginTop: '16px' }}>
                     <h4>Daily impact</h4>
                     <ul className="tab-panel-aside-list ticks">
                       <li>Healthy drivers = smooth, invisible experience.</li>
@@ -123,24 +209,23 @@ export default function HomeTabs() {
                   </aside>
                 </div>
               </div>
-            )}
 
-            {activeTab === 'how' && (
-              <div className="tab-switcher-panel active" role="tabpanel">
-                <div className="tab-panel-grid">
+              {/* How It Works */}
+              <div className="tab-switcher-panel" role="tabpanel">
+                <div className="tab-panel-grid" style={{ gridTemplateColumns: '1fr' }}>
                   <div className="tab-panel-text">
-                    <h3>How It All Works (Without the Headache)</h3>
-                    <p>
+                    <h3 style={{ marginBottom: '12px' }}>How It Works</h3>
+                    <p style={{ marginBottom: '12px' }}>
                       Follow a simple click. You press "Save." Your app whispers "save this file" to the operating system. The OS turns to the storage driver and says, "Hey, can you handle this?" The driver translates that polite request into the exact electrical signals your hard drive understands. Done — your file is safe. All of this happens in less time than a blink.
                     </p>
-                    <p>
+                    <p style={{ marginBottom: '12px' }}>
                       Behind the scenes, drivers are stacked like a relay team. Each one has its own job — one talks to the device, another tidies up the data, one handles the physical connection (USB, Wi-Fi, you name it). The request passes runner to runner until it reaches the hardware, and the answer travels back the same way.
                     </p>
                     <p>
                       What's wild is the speed. A typical request bounces through this whole relay in microseconds. You experience it as "instant," but a tiny, very organized conversation just took place.
                     </p>
                   </div>
-                  <aside className="tab-panel-aside">
+                  <aside className="tab-panel-aside" style={{ marginTop: '16px' }}>
                     <h4>The relay race</h4>
                     <ul className="tab-panel-aside-list ticks">
                       <li>Apps speak to the OS using friendly APIs.</li>
@@ -151,7 +236,7 @@ export default function HomeTabs() {
                   </aside>
                 </div>
               </div>
-            )}
+            </div>
           </div>
         </div>
       </div>

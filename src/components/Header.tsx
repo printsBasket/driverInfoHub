@@ -7,10 +7,10 @@ import { usePathname } from 'next/navigation';
 
 const navLinks = [
   { name: 'Home',           path: '/' },
-  { name: 'All Drivers',    path: '/drivers' },
-  { name: 'Knowledge Base', path: '/knowledge' },
-  { name: 'Blog',           path: '/blog' },
-  { name: 'About',          path: '/about' },
+  { name: 'All Drivers',    path: '/drivers/' },
+  { name: 'Knowledge Base', path: '/knowledge/' },
+  { name: 'Blog',           path: '/blog/' },
+  { name: 'About',          path: '/about/' },
 ];
 
 export default function Header() {
@@ -31,8 +31,14 @@ export default function Header() {
     return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
 
-  const active = (p: string) =>
-    p === '/' ? pathname === '/' : pathname === p || (pathname ?? '').startsWith(p + '/');
+  const active = (p: string) => {
+    const normalizedPathname = pathname?.endsWith('/') ? pathname : pathname + '/';
+    const normalizedP = p.endsWith('/') ? p : p + '/';
+    if (p === '/') {
+      return pathname === '/' || pathname === '';
+    }
+    return normalizedPathname.startsWith(normalizedP);
+  };
 
   return (
     <>
@@ -57,7 +63,7 @@ export default function Header() {
               </Link>
             ))}
             <Link 
-              href="/contact" 
+              href="/contact/" 
               className="btn btn-primary"
               style={{
                 background: 'linear-gradient(135deg, #2563EB 0%, #0EA5E9 100%)',
@@ -117,7 +123,7 @@ export default function Header() {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </Link>
           ))}
-          <Link key="Contact" href="/contact" className={`drawer__link${active('/contact') ? ' drawer__link--active' : ''}`}>
+          <Link key="Contact" href="/contact/" className={`drawer__link${active('/contact/') ? ' drawer__link--active' : ''}`}>
             <span>Contact</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </Link>

@@ -4,150 +4,295 @@ import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: "USB Drivers Explained — Plug and Play | Driver Info Hub",
-  description: "How the USB driver stack lets you plug almost anything in and have it just work, plus fixes for unknown devices and drives that keep disconnecting.",
+  description: "How the USB driver stack lets you plug almost anything in and have it just work, plus fixes for unknown devices and drives that keep disconnecting."
 }
 
 export default function USBDrivers() {
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <div className="hero-inner animate-fade-in">
-            <nav className="breadcrumb" aria-label="Breadcrumb">
-              <ol>
-                <li><Link href="/">Home</Link></li>
-                <li><Link href="/drivers/">Device Drivers</Link></li>
-                <li aria-current="page">USB & Devices</li>
-              </ol>
-            </nav>
-            <span className="section-kicker">USB & Devices</span>
-            <h1>The Universal Translator for <span style={{ color: 'var(--primary)' }}>Plug-and-Play Devices</span></h1>
-            <p className="hero-lede">Plug something in, and within a second your computer knows what it is and how to talk to it. That little feat of engineering is the USB driver stack at work.</p>
+      {/* Hero - Light gradient for accessibility */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-blue-50 to-slate-50 py-24 md:py-32">
+        <div className="absolute inset-0">
+          <div className="absolute left-1/3 top-1/3 h-64 w-64 rounded-full bg-blue-300/20 blur-3xl" />
+          <div className="absolute right-1/3 bottom-1/3 h-64 w-64 rounded-full bg-indigo-300/20 blur-3xl" />
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-300 bg-white px-6 py-2 text-xs font-bold uppercase tracking-[0.25em] text-blue-700 mb-6 shadow-sm">
+              USB & Devices
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 leading-tight">
+              The Universal Translator for
+              <span className="bg-gradient-to-r from-blue-700 to-indigo-600 bg-clip-text text-transparent">
+                Plug-and-Play
+              </span>
+            </h1>
+            <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Plug something in and within a second your computer knows exactly what it is and how to talk to it. That little feat of engineering is your USB driver stack in action!
+            </p>
           </div>
         </div>
       </section>
 
-      <section className="block">
-        <div className="container">
-          <div className="split">
+      {/* How it Works */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="section-kicker">How it works</span>
-              <h2>What the USB Stack Does</h2>
-              <p>When you connect a device, a chain of drivers springs into action: a host-controller driver manages the physical port, a hub driver tracks what's attached, and a class or device driver knows how to speak to that specific kind of hardware — a keyboard, a drive, a camera.</p>
-              <p>Together they enumerate the device, assign it resources, and load the right software so it simply works, often with no action from you at all.</p>
-              <ul className="ticks">
-                <li>Detects and enumerates newly connected devices</li>
-                <li>Loads the correct class or device-specific driver</li>
-                <li>Manages power delivery and port resources</li>
-                <li>Supports hubs, daisy-chaining, and hot-plugging</li>
-              </ul>
-            </div>
-            <div className="split-media">
-              <Image src="/assets/images/usb-what.svg" alt="Diagram showing how the usb & devices layer carries work from applications to hardware" width={600} height={450} />
-            </div>
-          </div>
-        </div>
-      </section>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">What the USB Stack Does</h2>
+              <p className="text-lg text-slate-600 mb-4 leading-relaxed">
+                When you connect a USB device, a chain of drivers springs into action: host controller driver manages the physical port, hub driver tracks what's attached, and class or device-specific driver handles talking to that type of hardware!
+              </p>
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                Together they enumerate, assign resources, and load correct software so it just works, often without you lifting a finger!
+              </p>
 
-      <section className="block" style={{ background: 'var(--bg-light)' }}>
-        <div className="container">
-          <div className="split rev">
-            <div className="split-media">
-              <Image src="/assets/images/usb-fix.svg" alt="Diagram showing the common symptom and the clean-reinstall fix for usb & devices" width={600} height={450} />
-            </div>
-            <div>
-              <span className="section-kicker">Troubleshooting</span>
-              <h2>When a Device Isn't Recognised</h2>
-              <p>An unknown-device error, a drive that mounts then vanishes, or a port that charges but won't transfer data — these point to the USB stack rather than the gadget itself.</p>
-              <p>Trying another port, reseating the cable, and reinstalling the device-specific driver from its maker clears up most cases. A surprising number are simply a tired cable or a port stuck in a low-power state after sleep.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="block">
-        <div className="container">
-          <div className="prose">
-            <span className="section-kicker" style={{ textAlign: 'center' }}>Step-by-step guide</span>
-            <h2 style={{ textAlign: 'center' }}>Fix it in five careful steps</h2>
-            <ol className="fixsteps">
-              <li><strong>Swap the cable</strong> — Cables fail far more often than ports or drivers do — always try a known-good cable first.</li>
-              <li><strong>Try a different port</strong> — Move from a hub or front-panel port to one directly on the machine itself.</li>
-              <li><strong>Reinstall the device driver</strong> — Uninstall the device in Device Manager, unplug it, restart, then reconnect it.</li>
-              <li><strong>Update the controller driver</strong> — Install the chipset / USB controller package from your machine's maker — it underpins every port.</li>
-              <li><strong>Disable selective suspend</strong> — If a device drops out after idle periods, turn off USB selective suspend in your power options.</li>
-            </ol>
-            <p className="note-soft">If anything here feels out of your depth, that's a normal feeling — a local technician can run this exact routine in minutes. Nothing on this page requires special tools.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="block" style={{ background: 'var(--bg-light)' }}>
-        <div className="container">
-          <div className="section-head">
-            <span className="section-kicker">Decode the jargon</span>
-            <h2>Common Device Manager codes for this category</h2>
-            <p>USB problems come with their own set of Device Manager codes. The usual suspects, decoded:</p>
-          </div>
-          <div className="table-wrap">
-            <table className="dwtable">
-              <thead>
-                <tr><th scope="col">Code</th><th scope="col">What it means in plain English</th><th scope="col">The usual fix</th></tr>
-              </thead>
-              <tbody>
-                <tr><td><code>Code 43</code></td><td>A device on this port misbehaved and was stopped.</td><td>Try another cable and another port, then reinstall the device's driver.</td></tr>
-                <tr><td><code>Code 28</code></td><td>No driver is installed for the device.</td><td>Install the maker's driver for your operating-system version.</td></tr>
-                <tr><td><code>Code 45</code></td><td>The device was disconnected, or the port lost it.</td><td>Reseat the connection and replace marginal cables — they fail far more often than ports.</td></tr>
-                <tr><td><code>Code 10</code></td><td>The device cannot start.</td><td>Uninstall it in Device Manager, unplug, restart, then plug it back in.</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section className="block">
-        <div className="container">
-          <div className="section-head">
-            <span className="section-kicker">Quick Answers</span>
-            <h2>Frequently Asked Questions</h2>
-            <p>The questions readers send us most about this topic.</p>
-          </div>
-          <div className="faq">
-            <details>
-              <summary>My USB device shows as 'unknown'. What does that mean?</summary>
-              <div className="faq-body">
-                <p>The computer sees something connected but can't load a matching driver. Try a different port and cable first, then install the device's own driver from the manufacturer.</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  "Detects and enumerates new devices automatically",
+                  "Loads the right class or device-specific driver",
+                  "Manages power delivery and port resources",
+                  "Supports hubs, daisy-chaining, and hot swapping"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-2xl">
+                    <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700">
+                      ✓
+                    </div>
+                    <span className="text-slate-700 font-medium">{item}</span>
+                  </div>
+                ))}
               </div>
-            </details>
-            <details>
-              <summary>Why does my external drive keep disconnecting?</summary>
-              <div className="faq-body">
-                <p>Usually USB power management putting the port to sleep, or a marginal cable. A current driver plus disabling 'USB selective suspend' for that controller resolves most repeat disconnects.</p>
+            </div>
+
+            <div className="relative">
+              <div className="bg-gradient-to-br from-blue-50 to-sky-50 border border-blue-100 rounded-3xl p-8 shadow-lg">
+                <Image
+                  src="/assets/images/usb-what.svg"
+                  alt="Diagram showing USB driver stack connecting devices to computer"
+                  width={600}
+                  height={450}
+                  className="w-full h-auto rounded-2xl"
+                />
               </div>
-            </details>
-            <details>
-              <summary>Do I need to 'safely remove' USB drives?</summary>
-              <div className="faq-body">
-                <p>For storage devices it's still good practice: it flushes pending writes so files aren't corrupted mid-save. For mice, keyboards, and similar devices, just unplug.</p>
-              </div>
-            </details>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="block">
-        <div className="container">
-          <div className="cta-card" style={{ background: 'var(--navy)', borderRadius: 'var(--radius-lg)', padding: '80px 40px', textAlign: 'center', color: '#fff' }}>
-            <span className="section-kicker" style={{ color: 'var(--primary)' }}>Explore More</span>
-            <h2 style={{ color: '#fff' }}>Want us to explain another driver topic?</h2>
-            <p style={{ color: 'var(--text-light)', maxWidth: '600px', margin: '0 auto 40px' }}>Our friendly overview covers every major hardware category — from the device on your desk to the chips inside your laptop.</p>
-            <div className="hero-actions" style={{ justifyContent: 'center' }}>
-              <Link className="btn btn-primary" href="/drivers/">
-                Browse all topics
-              </Link>
-              <Link className="btn btn-light" href="/knowledge/" style={{ background: 'transparent', color: '#fff', borderColor: 'rgba(255,255,255,0.2)' }}>
-                Visit Knowledge Hub
-              </Link>
+      {/* Troubleshooting */}
+      <section className="py-20 md:py-28 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <div className="bg-white border border-slate-200 rounded-3xl p-8 shadow-lg">
+                <Image
+                  src="/assets/images/usb-fix.svg"
+                  alt="Diagram showing USB device troubleshooting steps"
+                  width={600}
+                  height={450}
+                  className="rounded-2xl w-full h-auto"
+                />
+              </div>
+            </div>
+            <div className="order-1 lg:order-2">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">When USB Devices Act Up</h2>
+              <div className="space-y-4 mb-8">
+                {[
+                  { title: "Unknown device error in Device Manager", desc: "Try another port/cable, or install maker's specific driver!" },
+                  { title: "External drive mounts but disappears", desc: "Check cable, port, and disable USB selective suspend!" },
+                  { title: "USB device charges but won't connect", desc: "The data pins are damaged or cable is power-only!" }
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3 p-5 rounded-2xl bg-white border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-indigo-500 text-white text-xl font-bold shadow-md">
+                      {i+1}
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
+                      <p className="text-slate-600">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Most USB issues can be solved with "swap cable → try new port → reinstall device driver" — that's your go-to first three steps for almost any USB problem!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5 Steps */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-sm font-bold text-blue-700 uppercase tracking-widest mb-4 block">Step-by-step guide</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">Fix it in 5 Careful Steps</h2>
+          </div>
+
+          <div className="space-y-6">
+            {[
+              {
+                title: "Swap the cable first",
+                desc: "Cables fail way more often than ports or drivers — this saves so much time!"
+              },
+              {
+                title: "Try another port",
+                desc: "Move from a hub or front panel to a port directly on your computer itself!"
+              },
+              {
+                title: "Reinstall device driver",
+                desc: "Uninstall device in Device Manager, unplug, restart, reconnect!"
+              },
+              {
+                title: "Update USB controller driver",
+                desc: "Install chipset/USB controller from your PC or motherboard maker!"
+              },
+              {
+                title: "Disable USB selective suspend",
+                desc: "If device drops out when idle, turn off USB selective suspend in power settings!"
+              }
+            ].map((step, i) => (
+              <div key={i} className="group flex gap-6 p-7 rounded-3xl bg-gradient-to-br from-slate-50 to-blue-50 border border-slate-200 hover:border-blue-300 hover:shadow-xl transition-all">
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-500 text-white text-2xl font-extrabold shadow-lg">
+                  {i+1}
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">{step.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Device Manager Codes */}
+      <section className="py-20 md:py-28 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Common USB Device Manager Codes</h2>
+            <p className="text-lg text-slate-600">The usual suspects and what to do about them!</p>
+          </div>
+
+          <div className="overflow-hidden bg-white rounded-3xl shadow-lg border border-slate-200">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left">
+                <thead className="bg-gradient-to-r from-slate-50 to-blue-50">
+                  <tr>
+                    <th className="px-8 py-5 font-extrabold text-slate-900 border-b border-slate-200">Code</th>
+                    <th className="px-8 py-5 font-extrabold text-slate-900 border-b border-slate-200">What it Means</th>
+                    <th className="px-8 py-5 font-extrabold text-slate-900 border-b border-slate-200">The Fix</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200">
+                  {[
+                    {
+                      code: "Code 43",
+                      meaning: "USB device misbehaved and was stopped by OS!",
+                      fix: "Try another cable/port, then reinstall device driver!"
+                    },
+                    {
+                      code: "Code 28",
+                      meaning: "No driver found for the device!",
+                      fix: "Install official driver from manufacturer!"
+                    },
+                    {
+                      code: "Code 45",
+                      meaning: "Device disconnected or port lost connection!",
+                      fix: "Reseat connection and replace bad cables!"
+                    },
+                    {
+                      code: "Code 10",
+                      meaning: "The USB device cannot start!",
+                      fix: "Uninstall in Device Manager, unplug, restart, reconnect!"
+                    }
+                  ].map((row, i) => (
+                    <tr key={i} className="hover:bg-blue-50 transition-colors">
+                      <td className="px-8 py-6"><code className="bg-blue-100 text-blue-800 px-3 py-1 rounded-lg font-bold">{row.code}</code></td>
+                      <td className="px-8 py-6 text-slate-600">{row.meaning}</td>
+                      <td className="px-8 py-6 text-slate-600">{row.fix}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Frequently Asked Questions</h2>
+            <p className="text-lg text-slate-600">Questions we get asked most about USB and device drivers!</p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "USB device shows as 'Unknown Device' — what now?",
+                a: "Try a different cable/port first! If that doesn't work, install manufacturer's specific driver!"
+              },
+              {
+                q: "Why does my external drive keep disconnecting randomly?",
+                a: "Usually power management putting port to sleep or a flaky cable! Disable selective suspend and swap the cable!"
+              },
+              {
+                q: "Do I need to 'safely remove' my USB drives?",
+                a: "For storage drives — yes, good practice to flush pending writes! For mice/keyboards, just unplug!"
+              }
+            ].map((faq, i) => (
+              <details key={i} className="group border border-slate-200 rounded-3xl bg-white overflow-hidden shadow-sm hover:shadow-md transition-all">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 p-6 font-bold text-slate-900 bg-slate-50 hover:bg-blue-50 transition-colors">
+                  <span>{faq.q}</span>
+                  <span className="transition group-open:rotate-180 bg-white border border-slate-200 rounded-full p-2">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="text-slate-500">
+                      <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                  </span>
+                </summary>
+                <div className="border-t border-slate-200 p-6 text-slate-600 leading-relaxed bg-white">
+                  {faq.a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 md:py-28">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 px-8 py-16 md:px-16 md:py-24 text-center shadow-2xl">
+            <div className="absolute inset-0">
+              <div className="absolute left-0 top-0 h-64 w-64 rounded-full bg-blue-500/20 blur-3xl" />
+              <div className="absolute right-0 bottom-0 h-64 w-64 rounded-full bg-indigo-500/15 blur-3xl" />
+            </div>
+            <div className="relative">
+              <span className="text-sm font-bold text-blue-300 uppercase tracking-widest block mb-4">Explore More</span>
+              <h2 className="mx-auto max-w-2xl text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight">
+                Want to Learn About All Driver Types?
+              </h2>
+              <p className="mx-auto max-w-xl text-lg leading-relaxed text-slate-300 mb-10">
+                Understand the full spectrum from user-mode to kernel-mode, and when each is the right choice!
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link
+                  className="inline-flex items-center justify-center px-10 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-500 text-base font-bold text-white shadow-lg hover:scale-105 transition-all"
+                  href="/drivers/"
+                >
+                  Browse All Driver Types
+                </Link>
+                <Link
+                  className="inline-flex items-center justify-center px-10 py-4 rounded-xl border-2 border-slate-600 bg-slate-800/50 text-base font-bold text-white backdrop-blur-sm hover:border-blue-400 transition-all"
+                  href="/knowledge/"
+                >
+                  Visit Knowledge Hub
+                </Link>
+              </div>
             </div>
           </div>
         </div>

@@ -4,292 +4,431 @@ import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: "Wi-Fi & Network Drivers Explained | Driver Info Hub",
-  description: "Network drivers connect your PC to the internet. Learn what they do and how to fix dropping Wi-Fi, slow speeds, and connections that won't wake from sleep.",
+  description: "Network drivers connect your PC to the internet. Learn what they do and how to fix dropping Wi-Fi, slow speeds, and connections that won't wake from sleep."
 }
 
 export default function NetworkDrivers() {
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <div className="hero-inner animate-fade-in">
-            <nav className="breadcrumb" aria-label="Breadcrumb">
-              <ol>
-                <li><Link href="/">Home</Link></li>
-                <li><Link href="/drivers/">Device Drivers</Link></li>
-                <li aria-current="page">Network Drivers</li>
-              </ol>
-            </nav>
-            <span className="section-kicker">Wi-Fi & Network drivers</span>
-            <h1>The Bridge Between Your <span style={{ color: 'var(--primary)' }}>PC and the Internet</span></h1>
-            <p className="hero-lede">Every page you load, every video you stream, and every call you join passes through a network driver before it ever reaches your screen.</p>
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-sky-50 py-24 md:py-32">
+        <div className="absolute inset-0">
+          <div className="absolute left-1/4 top-0 h-96 w-96 rounded-full bg-blue-300/30 blur-3xl" />
+          <div className="absolute right-1/4 bottom-0 h-80 w-80 rounded-full bg-sky-300/30 blur-3xl" />
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-300 bg-white px-6 py-2 text-xs font-bold uppercase tracking-[0.25em] text-blue-700 mb-6 shadow-sm">
+              Wi-Fi & Network Drivers
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 leading-tight">
+              The Bridge Between Your
+              <span className="bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">
+                PC and the Internet
+              </span>
+            </h1>
+            <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Every page you load, every video you stream, every call you join passes through a network driver before it ever reaches your screen!
+            </p>
           </div>
         </div>
       </section>
 
-      <section className="block">
-        <div className="container">
-          <div className="split">
+      {/* How it Works */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="section-kicker">How it works</span>
-              <h2>What a Network Driver Does</h2>
-              <p>A network driver is the software layer that connects your operating system's networking stack to the physical Wi-Fi or Ethernet chip in your machine. It receives packets from the hardware, hands them up to the operating system, and sends outgoing data back down to be transmitted.</p>
-              <p>On the wireless side it also manages connecting to access points, handling encryption, and adjusting transmission rates as you move around — all without you noticing.</p>
-              <ul className="ticks">
-                <li>Moves packets between the OS and the network chip</li>
-                <li>Handles wireless association, authentication, and roaming</li>
-                <li>Implements features like checksum offload and packet queuing</li>
-                <li>Reports link speed, signal strength, and connection health</li>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">What a Network Driver Does</h2>
+              <p className="text-lg text-slate-600 mb-4 leading-relaxed">
+                A network driver is the software layer connecting your operating system's networking stack to the physical Wi-Fi or Ethernet chip in your computer!
+              </p>
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                On wireless, it handles access point association, encryption, and adapts transmission rates as you move around.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  "Moves packets between OS and hardware",
+                  "Handles Wi-Fi connection & authentication",
+                  "Manages features like checksum offload",
+                  "Reports signal strength and link health"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3 p-4 bg-gradient-to-br from-blue-50 to-sky-50 border border-blue-100 rounded-2xl">
+                    <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700">
+                      ✓
+                    </div>
+                    <span className="text-slate-700 font-medium">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="bg-gradient-to-br from-blue-50 to-sky-50 border border-blue-100 rounded-3xl p-8 shadow-lg">
+                <Image
+                  src="/assets/images/network-what.svg"
+                  alt="Diagram showing how the network driver works"
+                  width={600}
+                  height={450}
+                  className="w-full h-auto rounded-2xl"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Troubleshooting - Cards on top */}
+      <section className="py-20 md:py-28 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Common Connectivity Frustrations</h2>
+            <p className="text-lg text-slate-600">Wi-Fi dropping, slow speeds, or connections not waking up — we've all been there!</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div className="flex flex-col md:flex-row gap-6 items-center bg-white border border-slate-200 rounded-3xl p-8 shadow-lg">
+              <div className="md:w-1/2">
+                <Image
+                  src="/assets/images/network-fix.svg"
+                  alt="Network driver troubleshooting diagram"
+                  width={350}
+                  height={250}
+                  className="rounded-2xl"
+                />
+              </div>
+              <div className="md:w-1/2">
+                <h3 className="text-2xl font-bold text-slate-900 mb-3">Fix: Clean Reinstall + Power Tweaks</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  A fresh driver, paired with turning off aggressive OS power-saving on the network chip, resolves 90% of issues!
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 gap-4">
+              {[
+                "Wi-Fi dropping every few minutes",
+                "Speeds way slower than other devices",
+                "Won't connect or asks for password repeatedly",
+                "Ethernet works but Wi-Fi won't stay up"
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-3 p-5 rounded-2xl bg-white border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-sky-500 text-white text-xl font-bold shadow-md">
+                    {i+1}
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-lg font-medium text-slate-800">{item}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Steps Section - 5 steps again, unique layout */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="text-sm font-bold text-blue-700 uppercase tracking-widest mb-4 block">Step-by-step guide</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">Fix it in 5 Careful Steps</h2>
+          </div>
+
+          <div className="space-y-6">
+            {[
+              {
+                num: 1,
+                title: "Identify the adapter",
+                desc: "Device Manager → Network adapters and note exact model!"
+              },
+              {
+                num: 2,
+                title: "Download first while you still can",
+                desc: "Grab driver from laptop maker (for notebooks) or chip maker while online!"
+              },
+              {
+                num: 3,
+                title: "Uninstall old driver completely",
+                desc: "Delete the device in Device Manager, tick to remove driver software!"
+              },
+              {
+                num: 4,
+                title: "Restart & install fresh",
+                desc: "Reboot, run the downloaded installer, reconnect to network!"
+              },
+              {
+                num: 5,
+                title: "Turn off aggressive power saving",
+                desc: "Adapter properties → Power Management → untick let OS turn it off!"
+              }
+            ].map((step, i) => (
+              <div key={i} className="group flex gap-6 p-7 rounded-3xl bg-gradient-to-br from-slate-50 to-blue-50 border border-slate-200 hover:border-blue-300 hover:shadow-xl transition-all">
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-sky-500 text-white text-2xl font-extrabold shadow-lg">
+                  {step.num}
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">{step.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Ethernet vs Wi-Fi - Fun comparison */}
+      <section className="py-20 md:py-28 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Ethernet vs Wi-Fi</h2>
+            <p className="text-lg text-slate-600">Understanding your driver makes choosing easier!</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm">
+              <h3 className="text-2xl font-extrabold text-slate-900 mb-3">Ethernet (Wired)</h3>
+              <ul className="space-y-3 mb-6">
+                {[
+                  "Direct, stable, low-interference link",
+                  "100 Mbps, 1 Gbps, and even 10 Gbps options",
+                  "Best for gaming or streaming"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700">
+                      ✓
+                    </div>
+                    <span className="text-slate-700">{item}</span>
+                  </li>
+                ))}
               </ul>
+              <p className="text-slate-600 italic text-sm">Driver's job is simple: move data quickly and reliably!</p>
             </div>
-            <div className="split-media">
-              <Image src="/assets/images/network-what.svg" alt="Diagram showing how the wi-fi & network drivers layer carries work from applications to hardware" width={600} height={450} />
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section className="block" style={{ background: 'var(--bg-light)' }}>
-        <div className="container">
-          <div className="split rev">
-            <div className="split-media">
-              <Image src="/assets/images/network-fix.svg" alt="Diagram showing the common symptom and the clean-reinstall fix for wi-fi & network drivers" width={600} height={450} />
-            </div>
-            <div>
-              <span className="section-kicker">Troubleshooting</span>
-              <h2>Common Connectivity Frustrations</h2>
-              <p>Wi-Fi that drops every few minutes, slow speeds compared to other devices on the same network, or a connection that refuses to come back after sleep — these are the most common driver-related complaints, and among the most easily fixed.</p>
-              <p>A fresh driver, paired with a power-management setting that stops the OS from aggressively powering down the network chip, solves most of them. For laptops, your manufacturer's site is almost always the right source, since they tune it for your specific Wi-Fi module.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="block">
-        <div className="container">
-          <div className="prose">
-            <span className="section-kicker" style={{ textAlign: 'center' }}>Step-by-step guide</span>
-            <h2 style={{ textAlign: 'center' }}>Fix it in five careful steps</h2>
-            <ol className="fixsteps">
-              <li><strong>Identify the adapter</strong> — Device Manager → Network adapters: note the exact name of your Wi-Fi or Ethernet chip.</li>
-              <li><strong>Download the current driver first</strong> — From your laptop maker for notebooks, or the chip maker for desktop cards — before you uninstall anything, while you still have internet.</li>
-              <li><strong>Uninstall the old driver</strong> — Remove the adapter in Device Manager, ticking the option to delete the driver software.</li>
-              <li><strong>Restart and install</strong> — Reboot, run the installer you downloaded, and reconnect to your network.</li>
-              <li><strong>Tame power management</strong> — In the adapter's properties, untick "allow the computer to turn off this device to save power" — the single biggest fix for drop-outs.</li>
-            </ol>
-            <p className="note-soft">If anything here feels out of your depth, that's a normal feeling — a local technician can run this exact routine in minutes. Nothing on this page requires special tools.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="block" style={{ background: 'var(--bg-light)' }}>
-        <div className="container">
-          <div className="section-head">
-            <span className="section-kicker">Connection Types</span>
-            <h2>Wi-Fi vs. Ethernet: Understanding Your Network Driver</h2>
-            <p>Your network driver manages either Wi-Fi or Ethernet (or both). Understanding how each works helps you diagnose speed and stability issues.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-            <div className="card">
-              <h3>Ethernet (Wired)</h3>
-              <p><strong>How it works:</strong> A physical cable connects your PC directly to a router or network jack. Data travels through the copper wire — no wireless interference.</p>
-              <p style={{ marginTop: '12px' }}><strong>Speed tiers:</strong></p>
-              <ul style={{ listStyle: 'none', padding: '0 0 0 12px', margin: '8px 0' }}>
-                <li>• 100 Mbps (older networks)</li>
-                <li>• 1000 Mbps / 1 Gbps (modern standard)</li>
-                <li>• 10 Gbps (high-end, rare)</li>
+            <div className="bg-gradient-to-br from-blue-50 to-sky-50 border border-blue-100 rounded-3xl p-8 shadow-sm">
+              <h3 className="text-2xl font-extrabold text-slate-900 mb-3">Wi-Fi (Wireless)</h3>
+              <ul className="space-y-3 mb-6">
+                {[
+                  "No cables, perfect for laptops/mobile",
+                  "802.11ac/WiFi5: up to 1-3 Gbps",
+                  "802.11ax/WiFi6: up to 10 Gbps+",
+                  "Driver handles roaming, encryption, rate adaption"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700">
+                      ✓
+                    </div>
+                    <span className="text-slate-700">{item}</span>
+                  </li>
+                ))}
               </ul>
-              <p style={{ marginTop: '12px', fontSize: '0.9rem', color: 'var(--text-muted)' }}><em>The driver's job is simple: move data in and out of the physical port. It's very reliable because there's nothing wireless to interfere.</em></p>
-            </div>
-
-            <div className="card">
-              <h3>Wi-Fi (Wireless)</h3>
-              <p><strong>How it works:</strong> Radio waves carry data between your PC and the router. No wires needed, but interference and distance affect speed.</p>
-              <p style={{ marginTop: '12px' }}><strong>Speed standards:</strong></p>
-              <ul style={{ listStyle: 'none', padding: '0 0 0 12px', margin: '8px 0' }}>
-                <li>• 802.11ac (Wi-Fi 5) – 1-3 Gbps theoretical</li>
-                <li>• 802.11ax (Wi-Fi 6) – 1-10 Gbps theoretical</li>
-                <li>• 802.11be (Wi-Fi 7) – 40+ Gbps theoretical</li>
-              </ul>
-              <p style={{ marginTop: '12px', fontSize: '0.9rem', color: 'var(--text-muted)' }}><em>The driver handles connecting to access points, managing signal strength, and switching networks — much more complex than Ethernet.</em></p>
-            </div>
-
-            <div className="card">
-              <h3>When to Use Ethernet</h3>
-              <p><strong>Best for:</strong></p>
-              <ul style={{ listStyle: 'none', padding: '0 0 0 12px', margin: '8px 0' }}>
-                <li>• Gaming (lowest latency)</li>
-                <li>• Video streaming or downloading large files</li>
-                <li>• Video calls that need stability</li>
-                <li>• Desktop PCs where cables aren't an issue</li>
-              </ul>
-              <p style={{ marginTop: '12px', fontSize: '0.9rem', color: 'var(--text-muted)' }}><em>Ethernet is always faster and more stable, when you have the option.</em></p>
-            </div>
-
-            <div className="card">
-              <h3>When Wi-Fi is Fine</h3>
-              <p><strong>Good enough for:</strong></p>
-              <ul style={{ listStyle: 'none', padding: '0 0 0 12px', margin: '8px 0' }}>
-                <li>• Browsing the web</li>
-                <li>• Email and messaging</li>
-                <li>• Casual video streaming</li>
-                <li>• Laptops and mobile devices</li>
-              </ul>
-              <p style={{ marginTop: '12px', fontSize: '0.9rem', color: 'var(--text-muted)' }}><em>Modern Wi-Fi drivers are very good. If you're close to the router, you might not notice the difference.</em></p>
+              <p className="text-slate-600 italic text-sm">Driver has more to do — keep it updated!</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="block">
-        <div className="container">
-          <div className="section-head">
-            <span className="section-kicker">Troubleshooting</span>
-            <h2>Speed & Stability Problems Decoded</h2>
-            <p>Network issues usually fall into a few categories. Here's how to pinpoint what's wrong with your driver.</p>
+      {/* Speed & Stability Issues - Cards grid */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 text-center mb-12">Speed & Stability Issues Decoded</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Wi-Fi Drops Frequently",
+                desc: "Power management! Untick 'let OS turn off adapter'!"
+              },
+              {
+                title: "Slower Than Other Devices",
+                desc: "Update driver, disable power saving, check router!"
+              },
+              {
+                title: "Won't Connect to Wi-Fi",
+                desc: "Forget & rejoin, update driver, check router band!"
+              },
+              {
+                title: "High Ping/Latency in Games",
+                desc: "Go wired, update driver, move closer, no QoS!"
+              },
+              {
+                title: "No 5 GHz Visible",
+                desc: "Check if adapter supports it, check bands on router!"
+              },
+              {
+                title: "Ethernet Good but Wi-Fi Not",
+                desc: "Wi-Fi hardware/driver specific issue, update driver first!"
+              }
+            ].map((card, i) => (
+              <div key={i} className="rounded-3xl bg-gradient-to-br from-blue-50 to-sky-50 border border-blue-100 p-7">
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{card.title}</h3>
+                <p className="text-slate-600">{card.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Optimization Tips */}
+      <section className="py-20 md:py-28 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Quick Network Driver Tweaks</h2>
+            <p className="text-lg text-slate-600">These changes are super impactful!</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-            <div className="card">
-              <h3>Wi-Fi Drops Every Few Minutes</h3>
-              <p><strong>The culprit:</strong> Almost always power management. Windows aggressively powers down the Wi-Fi chip to save battery, and the driver doesn't wake it cleanly.</p>
-              <p style={{ marginTop: '12px' }}><strong>The fix:</strong> Right-click the network adapter in Device Manager → Properties → Power Management. Uncheck "Allow the computer to turn off this device." Restart. This is the single most important tweak.</p>
-            </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              {
+                title: "Disable Power Saving for Adapter",
+                desc: "The #1 fix for Wi-Fi dropouts! We said it once, we'll say it again!"
+              },
+              {
+                title: "Check Your Band/Channel",
+                desc: "2.4 GHz for range, 5 GHz for speed!"
+              },
+              {
+                title: "Keep Router Firmware Updated Too",
+                desc: "Log into router and check for updates!"
+              },
+              {
+                title: "Keep Driver Current",
+                desc: "Monthly check for updates on manufacturer's site!"
+              }
+            ].map((item, i) => (
+              <div key={i} className="rounded-3xl bg-white border border-slate-200 p-7 shadow-sm hover:shadow-lg transition-all">
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
+                <p className="text-slate-600">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <div className="card">
-              <h3>Connection Speeds Are Slow</h3>
-              <p><strong>Check first:</strong> What speed does Device Manager show? Is your router actually broadcasting fast speeds?</p>
-              <p style={{ marginTop: '12px' }}><strong>Driver fix:</strong> Update to the latest driver. Older drivers often don't support the newest Wi-Fi standards. Disable power-saving mode (see above) — it can throttle speeds to save battery.</p>
-            </div>
+      {/* Device Manager Codes Table */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Common Device Manager Codes</h2>
+            <p className="text-lg text-slate-600">Here's what they mean and what to do!</p>
+          </div>
 
-            <div className="card">
-              <h3>Wi-Fi Won't Connect or Keeps Asking for Password</h3>
-              <p><strong>The problem:</strong> The driver lost its stored credentials or the router handshake is failing.</p>
-              <p style={{ marginTop: '12px' }}><strong>Fixes:</strong> Forget the network in Wi-Fi settings, then reconnect. Update the driver. Restart the router. Check if your router is on the correct Wi-Fi standard (some older drivers don't support newer standards like Wi-Fi 6).</p>
-            </div>
-
-            <div className="card">
-              <h3>High Ping / Latency Issues</h3>
-              <p><strong>What this means:</strong> Data is taking longer to get there and back (ping is the round-trip time).</p>
-              <p style={{ marginTop: '12px' }}><strong>Fixes:</strong> Switch to Ethernet if possible (it's more reliable). Update the driver. Move closer to the router. Check if other devices on Wi-Fi are hogging bandwidth. Disable Wi-Fi power saving and any QoS settings on the router.</p>
-            </div>
-
-            <div className="card">
-              <h3>Can't See or Connect to 5 GHz Networks</h3>
-              <p><strong>The issue:</strong> Your driver or hardware doesn't support dual-band Wi-Fi, or the 5 GHz network isn't broadcasting the SSID.</p>
-              <p style={{ marginTop: '12px' }}><strong>Check:</strong> Device Manager to see if your adapter lists "802.11ac" or "802.11ax" support. If not, a new card or driver update may be needed. Also ask: Is the 5 GHz band enabled on the router?</p>
-            </div>
-
-            <div className="card">
-              <h3>Ethernet Works But Wi-Fi is Spotty</h3>
-              <p><strong>What this tells you:</strong> The router is fine, the internet is fine — the issue is the Wi-Fi driver or the Wi-Fi chip itself.</p>
-              <p style={{ marginTop: '12px' }}><strong>Fix:</strong> Update the driver first. If issues persist, try moving the PC/router, disable power management, or contact the adapter maker for known issues with your exact model.</p>
+          <div className="overflow-hidden bg-white rounded-3xl shadow-lg border border-slate-200">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left">
+                <thead className="bg-gradient-to-r from-slate-50 to-blue-50">
+                  <tr>
+                    <th className="px-8 py-5 font-extrabold text-slate-900 border-b border-slate-200">Code</th>
+                    <th className="px-8 py-5 font-extrabold text-slate-900 border-b border-slate-200">What it Means</th>
+                    <th className="px-8 py-5 font-extrabold text-slate-900 border-b border-slate-200">The Fix</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200">
+                  {[
+                    {
+                      code: "Code 10",
+                      meaning: "The network adapter cannot start!",
+                      fix: "Reinstall the driver!"
+                    },
+                    {
+                      code: "Code 31",
+                      meaning: "The driver failed to load!",
+                      fix: "Uninstall device, restart, install fresh driver!"
+                    },
+                    {
+                      code: "Code 43",
+                      meaning: "Adapter reported an error, has been stopped!",
+                      fix: "Clean driver reinstall; for USB adapters try new port!"
+                    },
+                    {
+                      code: "Code 45",
+                      meaning: "Not currently connected (often after sleep)!",
+                      fix: "Restart + disable power management!"
+                    }
+                  ].map((row, i) => (
+                    <tr key={i} className="hover:bg-blue-50 transition-colors">
+                      <td className="px-8 py-6"><code className="bg-blue-100 text-blue-800 px-3 py-1 rounded-lg font-bold">{row.code}</code></td>
+                      <td className="px-8 py-6 text-slate-600">{row.meaning}</td>
+                      <td className="px-8 py-6 text-slate-600">{row.fix}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="block" style={{ background: 'var(--bg-light)' }}>
-        <div className="container">
-          <div className="section-head">
-            <span className="section-kicker">Optimization Tips</span>
-            <h2>Network Driver Tweaks for Better Performance</h2>
-            <p>These small settings changes often improve speed and stability dramatically.</p>
+      {/* FAQ */}
+      <section className="py-20 md:py-28 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 text-center mb-12">Frequently Asked Questions</h2>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "Why is my laptop slower than my phone?",
+                a: "Power management + old driver! Turn off power saving and update the driver!"
+              },
+              {
+                q: "Wi-Fi drops when laptop sleeps?",
+                a: "OS powers adapter down and driver doesn't wake cleanly; disable power management!"
+              },
+              {
+                q: "Ethernet works but Wi-Fi doesn't?",
+                a: "Different chips & different drivers, points directly to Wi-Fi driver/settings!"
+              }
+            ].map((faq, i) => (
+              <details key={i} className="group border border-slate-200 rounded-3xl bg-white overflow-hidden shadow-sm hover:shadow-md transition-all">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 p-6 font-bold text-slate-900 bg-slate-50 hover:bg-blue-50 transition-colors">
+                  <span>{faq.q}</span>
+                  <span className="transition group-open:rotate-180 bg-white border border-slate-200 rounded-full p-2">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="text-slate-500">
+                      <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                  </span>
+                </summary>
+                <div className="border-t border-slate-200 p-6 text-slate-600 leading-relaxed bg-white">
+                  {faq.a}
+                </div>
+              </details>
+            ))}
           </div>
+        </div>
+      </section>
 
-          <div style={{ marginTop: '40px' }}>
-            <div className="grid grid-auto-2">
-              <div className="card">
-                <h3>Disable Power Saving for the Adapter</h3>
-                <p>Device Manager → Network adapters → Properties → Power Management. Uncheck "Allow the computer to turn off this device." This is the #1 fix for Wi-Fi dropouts.</p>
-              </div>
-
-              <div className="card">
-                <h3>Check Your Wi-Fi Band</h3>
-                <p>Right-click the Wi-Fi icon → Network settings → Advanced network options → Wi-Fi. Make sure you're connected to 5 GHz (faster, shorter range) or 2.4 GHz (slower, better penetration).</p>
-              </div>
-
-              <div className="card">
-                <h3>Update Your Router Firmware</h3>
-                <p>Log into your router's admin panel (usually 192.168.1.1) and check for firmware updates. A new router firmware often includes driver improvements.</p>
-              </div>
-
-              <div className="card">
-                <h3>Keep Your Driver Current</h3>
-                <p>Check Device Manager monthly for network driver updates. Manufacturers regularly release fixes for speed, stability, and new Wi-Fi standards.</p>
-              </div>
+      {/* CTA Section */}
+      <section className="py-20 md:py-28">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 px-8 py-16 md:px-16 md:py-24 text-center shadow-2xl">
+            <div className="absolute inset-0">
+              <div className="absolute left-0 top-0 h-64 w-64 rounded-full bg-blue-500/20 blur-3xl" />
+              <div className="absolute right-0 bottom-0 h-64 w-64 rounded-full bg-sky-500/15 blur-3xl" />
             </div>
-          </div>
-        </div>
-      </section>
 
-      <section className="block">
-        <div className="container">
-          <div className="section-head">
-            <span className="section-kicker">Decode the jargon</span>
-            <h2>Common Device Manager codes for this category</h2>
-            <p>Next to a misbehaving network adapter, Device Manager shows one of a handful of short codes. Here's the translation.</p>
-          </div>
-          <div className="table-wrap">
-            <table className="dwtable">
-              <thead>
-                <tr><th scope="col">Code</th><th scope="col">What it means in plain English</th><th scope="col">The usual fix</th></tr>
-              </thead>
-              <tbody>
-                <tr><td><code>Code 10</code></td><td>The network adapter cannot start.</td><td>Reinstall the driver from your laptop or motherboard maker.</td></tr>
-                <tr><td><code>Code 31</code></td><td>The driver for the adapter could not be loaded.</td><td>Uninstall the device, restart, then install the current driver.</td></tr>
-                <tr><td><code>Code 43</code></td><td>The adapter reported a problem and was stopped.</td><td>Clean driver reinstall; for USB adapters, also try another port.</td></tr>
-                <tr><td><code>Code 45</code></td><td>The adapter isn't connected — often seen after sleep.</td><td>Restart, then disable 'allow the computer to turn off this device' in the adapter's power management tab.</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section className="block">
-        <div className="container">
-          <div className="section-head">
-            <span className="section-kicker">Quick Answers</span>
-            <h2>Frequently Asked Questions</h2>
-            <p>The questions readers send us most about this topic.</p>
-          </div>
-          <div className="faq">
-            <details>
-              <summary>Why is my Wi-Fi slower on my laptop than my phone?</summary>
-              <div className="faq-body">
-                <p>Often the laptop's network chip is parked in a power-saving mode, or it's running an older driver. Update the driver and disable aggressive power management for the adapter to close the gap.</p>
+            <div className="relative">
+              <span className="text-sm font-bold text-blue-300 uppercase tracking-widest block mb-4">Continue Learning</span>
+              <h2 className="mx-auto max-w-2xl text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight">
+                Want to Learn About All Driver Types?
+              </h2>
+              <p className="mx-auto max-w-xl text-lg leading-relaxed text-slate-300 mb-10">
+                Understand the full spectrum from user-mode to kernel-mode, and when each is the right choice!
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link
+                  className="inline-flex items-center justify-center px-10 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-sky-500 text-base font-bold text-white shadow-lg hover:scale-105 transition-all"
+                  href="/drivers/"
+                >
+                  Browse All Driver Types
+                </Link>
+                <Link
+                  className="inline-flex items-center justify-center px-10 py-4 rounded-xl border-2 border-slate-600 bg-slate-800/50 text-base font-bold text-white backdrop-blur-sm hover:border-blue-400 transition-all"
+                  href="/knowledge/"
+                >
+                  Visit Knowledge Hub
+                </Link>
               </div>
-            </details>
-            <details>
-              <summary>My Wi-Fi disconnects when the laptop sleeps. Is that normal?</summary>
-              <div className="faq-body">
-                <p>It's common but fixable. The OS powers the network chip down to save battery and the driver doesn't always wake it cleanly. A current driver plus turning off 'allow the computer to turn off this device' usually resolves it.</p>
-              </div>
-            </details>
-            <details>
-              <summary>Ethernet works but Wi-Fi doesn't — what does that tell me?</summary>
-              <div className="faq-body">
-                <p>They use different chips and different drivers, so it points squarely at the wireless adapter's driver or settings rather than your router or the operating system as a whole.</p>
-              </div>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <section className="block">
-        <div className="container">
-          <div className="cta-card" style={{ background: 'var(--navy)', borderRadius: 'var(--radius-lg)', padding: '80px 40px', textAlign: 'center', color: '#fff' }}>
-            <span className="section-kicker" style={{ color: 'var(--primary)' }}>Explore More</span>
-            <h2 style={{ color: '#fff' }}>Want us to explain another driver topic?</h2>
-            <p style={{ color: 'var(--text-light)', maxWidth: '600px', margin: '0 auto 40px' }}>Our friendly overview covers every major hardware category — from the device on your desk to the chips inside your laptop.</p>
-            <div className="hero-actions" style={{ justifyContent: 'center' }}>
-              <Link className="btn btn-primary" href="/drivers/">
-                Browse all topics
-              </Link>
-              <Link className="btn btn-light" href="/knowledge/" style={{ background: 'transparent', color: '#fff', borderColor: 'rgba(255,255,255,0.2)' }}>
-                Visit Knowledge Hub
-              </Link>
             </div>
           </div>
         </div>

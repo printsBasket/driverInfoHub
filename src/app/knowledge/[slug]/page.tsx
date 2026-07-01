@@ -31,7 +31,7 @@ export default async function KnowledgeDetail({ params }: { params: Promise<{ sl
             <ol className="flex items-center gap-2 flex-wrap">
               <li><Link href="/" className="hover:text-blue-600 transition-colors">Home</Link></li>
               <li><ChevronRight className="h-4 w-4" /></li>
-              <li><Link href="/knowledge" className="hover:text-blue-600 transition-colors">Knowledge Base</Link></li>
+              <li><Link href="/knowledge/" className="hover:text-blue-600 transition-colors">Knowledge Base</Link></li>
               <li><ChevronRight className="h-4 w-4" /></li>
               <li className="text-blue-600 truncate" aria-current="page">{title}</li>
             </ol>

@@ -11,10 +11,10 @@ export function Navbar() {
 
   const links = [
     { name: "Home", href: "/" },
-    { name: "Drivers", href: "/drivers" },
-    { name: "Blog", href: "/blog" },
-    { name: "Knowledge", href: "/knowledge" },
-    { name: "About", href: "/about" },
+    { name: "Drivers", href: "/drivers/" },
+    { name: "Blog", href: "/blog/" },
+    { name: "Knowledge", href: "/knowledge/" },
+    { name: "About", href: "/about/" },
   ];
 
   return (
@@ -35,7 +35,7 @@ export function Navbar() {
 
           <nav className="hidden md:flex items-center gap-1 rounded-full border border-slate-200 bg-slate-50 p-1.5">
             {links.map((link) => {
-              const isActive = pathname === link.href || (link.href !== '/' && pathname?.startsWith(link.href));
+              const isActive = pathname === link.href || (link.href !== '/' && pathname?.startsWith(link.href.replace(/\/$/, '')));
               return (
                 <Link
                   key={link.name}
@@ -54,7 +54,7 @@ export function Navbar() {
 
           <Link
             className="hidden sm:block rounded-full bg-gradient-to-r from-blue-600 to-sky-500 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm font-semibold text-white shadow-lg shadow-blue-200 transition-all duration-300 hover:scale-105"
-            href="/contact"
+            href="/contact/"
           >
             Contact Us
           </Link>
@@ -72,7 +72,7 @@ export function Navbar() {
               <SheetContent side="right" className="bg-white/95 backdrop-blur-xl">
                 <nav className="flex flex-col gap-4 mt-8">
                   {links.map((link) => {
-                    const isActive = pathname === link.href || (link.href !== '/' && pathname?.startsWith(link.href));
+                    const isActive = pathname === link.href || (link.href !== '/' && pathname?.startsWith(link.href.replace(/\/$/, '')));
                     return (
                       <Link
                         key={link.name}
@@ -87,7 +87,7 @@ export function Navbar() {
                   })}
                   <Link
                     className="mt-4 flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-sky-500 px-4 py-3 font-semibold text-white shadow-lg shadow-blue-200 transition-all duration-300 hover:scale-105"
-                    href="/contact"
+                    href="/contact/"
                   >
                     Contact Us
                   </Link>

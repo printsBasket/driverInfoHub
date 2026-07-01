@@ -163,7 +163,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 body {
@@ -174,6 +174,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 a { color: inherit; text-decoration: none; transition: var(--transition); }
@@ -189,7 +191,7 @@ input, textarea, select { font-family: inherit; }
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 24px;
 }
 
 @media (max-width: 640px) { .container { padding: 0 20px; } }
@@ -212,10 +214,10 @@ h1 { font-weight: 800; }
 h2 { font-weight: 700; } /* Reduced font weight as requested */
 h3 { font-weight: 700; }
 
-h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
-h2 { font-size: clamp(1.75rem, 3.5vw, 2.75rem); }
-h3 { font-size: 1.375rem; font-weight: 700; }
-h4 { font-size: 1.125rem; font-weight: 700; }
+h1 { font-size: clamp(1.9rem, 4.5vw, 3.4rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2.4rem); }
+h3 { font-size: 1.2rem; font-weight: 700; }
+h4 { font-size: 1rem; font-weight: 700; }
 
 p {
   color: var(--text-body);
@@ -413,6 +415,7 @@ pre code {
   transition: var(--transition);
   display: flex;
   flex-direction: column;
+  height: 100%;
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-sm); /* Added default shadow for better UI */
@@ -882,7 +885,7 @@ pre code {
 .dwtable {
   width: 100%;
   border-collapse: collapse;
-  text-align: left;
+  text-align: center;
 }
 
 .dwtable th {
@@ -1026,18 +1029,71 @@ pre code {
 
 /* Legacy cta-card */
 .cta-card {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--surface) 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 50%, #1e40af 100%);
   border-radius: var(--radius-xl);
-  padding: 80px 60px;
+  padding: 60px 40px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 24px 48px rgba(37, 99, 235, 0.25);
 }
-
-.cta-card h2 { color: #fff; }
-.cta-card p { color: rgba(255,255,255,0.6); }
-
-@media (max-width: 640px) { .cta-card { padding: 56px 28px; } }
+.cta-card h3 {
+  color: #ffffff !important;
+  font-size: clamp(1.5rem, 3vw, 2rem) !important;
+  margin-bottom: 12px !important;
+  font-weight: 800 !important;
+}
+.cta-card p {
+  color: rgba(255, 255, 255, 0.9) !important;
+  max-width: 600px;
+  margin: 0 auto 32px auto !important;
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem) !important;
+  line-height: 1.7 !important;
+}
+.cta-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+.cta-card .btn-primary {
+  background: #ffffff !important;
+  color: #1e40af !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 15px 32px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  transition: all 0.3s ease !important;
+}
+.cta-card .btn-primary:hover {
+  background: #f0f9ff !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+.cta-card .btn-outline {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  padding: 15px 32px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+}
+.cta-card .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+@media (max-width: 768px) {
+  .cta-card {
+    padding: 48px 24px;
+  }
+  .cta-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
 /* ============================================================
    PROSE (article body)
@@ -4352,7 +4408,7 @@ pre code {
   flex-shrink: 0;
 }
 
-.home-hero-h21 {
+.home-hero-h2 {
   font-size: clamp(2.6rem, 5vw, 4rem);
   font-weight: 900;
   line-height: 1.08;

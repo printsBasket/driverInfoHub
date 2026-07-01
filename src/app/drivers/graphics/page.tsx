@@ -4,244 +4,371 @@ import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: "Graphics Drivers Explained — GPU & Display | Driver Info Hub",
-  description: "What a graphics driver does, why screens flicker or go black, and how a clean reinstall fixes most GPU and display problems. Plain English, no downloads.",
+  description: "What a graphics driver does, why screens flicker or go black, and how a clean reinstall fixes most GPU and display problems. Plain English, no downloads."
 }
 
 export default function GraphicsDrivers() {
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <div className="hero-inner animate-fade-in">
-            <nav className="breadcrumb" aria-label="Breadcrumb">
-              <ol>
-                <li><Link href="/">Home</Link></li>
-                <li><Link href="/drivers/">Device Drivers</Link></li>
-                <li aria-current="page">Graphics Drivers</li>
-              </ol>
-            </nav>
-            <span className="section-kicker">Graphics drivers</span>
-            <h1>Where Your GPU Meets the <span style={{ color: 'var(--primary)' }}>Real World</span></h1>
-            <p className="hero-lede">Every frame on your screen is the result of a quiet conversation between the operating system, the graphics card, and a remarkable piece of software called the graphics driver.</p>
+      {/* Hero - Dark gradient for gaming vibe */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 py-24 md:py-32">
+        <div className="absolute inset-0">
+          <div className="absolute left-1/4 top-1/3 h-80 w-80 rounded-full bg-blue-400/20 blur-3xl" />
+          <div className="absolute right-1/4 bottom-1/3 h-72 w-72 rounded-full bg-indigo-400/20 blur-3xl" />
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-300/30 bg-white/10 backdrop-blur px-6 py-2 text-xs font-bold uppercase tracking-[0.25em] text-blue-200 mb-6 shadow-sm">
+              Graphics Drivers
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
+              Where Your GPU Meets the
+              <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                Real World
+              </span>
+            </h1>
+            <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+              Every frame on your screen is the result of a quiet conversation between your operating system, your graphics card, and a remarkable piece of software called the graphics driver!
+            </p>
           </div>
         </div>
       </section>
 
-      <section className="block">
-        <div className="container">
-          <div className="split">
+      {/* How it Works */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="section-kicker">How it works</span>
-              <h2>What a Graphics Driver Does</h2>
-              <p>A graphics driver receives drawing instructions from the operating system and your applications, then translates them into the exact commands your specific GPU understands. It manages memory on the card, schedules rendering work, and pushes finished frames to the display at the right moment.</p>
-              <p>It also exposes advanced features — hardware video decoding, multiple-monitor layouts, and game-ready optimisations — that applications can ask for without knowing the details of your card.</p>
-              <ul className="ticks">
-                <li>Translates rendering calls into GPU-specific commands</li>
-                <li>Manages video memory and the frame buffer</li>
-                <li>Handles multi-monitor layout, scaling, and refresh</li>
-                <li>Enables hardware video decode and acceleration</li>
-              </ul>
-            </div>
-            <div className="split-media">
-              <Image src="/assets/images/graphics-what.svg" alt="Diagram showing how the graphics drivers layer carries work from applications to hardware" width={600} height={450} />
-            </div>
-          </div>
-        </div>
-      </section>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">What a Graphics Driver Does</h2>
+              <p className="text-lg text-slate-600 mb-4 leading-relaxed">
+                A graphics driver receives drawing instructions from your OS and applications, then translates them into commands your specific GPU understands perfectly!
+              </p>
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                It also enables hardware video decoding, manages multi-monitor setups, and delivers game-ready optimizations!
+              </p>
 
-      <section className="block" style={{ background: 'var(--bg-light)' }}>
-        <div className="container">
-          <div className="split rev">
-            <div className="split-media">
-              <Image src="/assets/images/graphics-fix.svg" alt="Diagram showing the common symptom and the clean-reinstall fix for graphics drivers" width={600} height={450} />
-            </div>
-            <div>
-              <span className="section-kicker">Troubleshooting</span>
-              <h2>Common Display Frustrations</h2>
-              <p>Flickering, a screen that goes black after waking, stutter in games, or a resolution that won't stick — these are the classic graphics-driver complaints, and they're usually among the most fixable.</p>
-              <p>A clean reinstall of the latest driver from your card maker resolves the large majority of them, because it removes leftovers from previous versions that can quietly conflict. For laptops, your computer maker's site is often the better source, since their build is tuned for your exact panel and power settings.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="block">
-        <div className="container">
-          <div className="prose">
-            <span className="section-kicker" style={{ textAlign: 'center' }}>Step-by-step guide</span>
-            <h2 style={{ textAlign: 'center' }}>Fix it in five careful steps</h2>
-            <ol className="fixsteps">
-              <li><strong>Note your exact GPU model</strong> — Open Device Manager → Display adapters (or your system information tool) and write down the full model name.</li>
-              <li><strong>Download the right driver</strong> — Get it from the GPU maker's official site — or, for laptops, your laptop maker's support page, which is tuned for your panel and power limits.</li>
-              <li><strong>Uninstall the current driver</strong> — In Device Manager, uninstall the display adapter and tick "delete the driver software for this device" if offered.</li>
-              <li><strong>Restart, then install</strong> — Reboot, run the installer you downloaded earlier, and choose the clean or custom install option when available.</li>
-              <li><strong>Restart and verify</strong> — Reboot once more, then confirm your resolution and refresh rate are back at the panel's native values.</li>
-            </ol>
-            <p className="note-soft">If anything here feels out of your depth, that's a normal feeling — a local technician can run this exact routine in minutes. Nothing on this page requires special tools.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="block" style={{ background: 'var(--bg-light)' }}>
-        <div className="container">
-          <div className="section-head">
-            <span className="section-kicker">Performance Settings</span>
-            <h2>Refresh Rate, Resolution & Gaming Performance</h2>
-            <p>Your graphics driver controls how fast your display redraws and at what resolution. Understanding these settings helps you get the best visual experience for your hardware.</p>
-          </div>
-
-       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-            <div className="card">
-              <h3>Refresh Rate (Hz)</h3>
-              <p><strong>What it means:</strong> How many times per second your monitor redraws the image. Like frames per second, but for the display itself.</p>
-              <p style={{ marginTop: '12px' }}><strong>Common rates:</strong></p>
-              <ul style={{ listStyle: 'none', padding: '0 0 0 12px', margin: '8px 0' }}>
-                <li>• 60 Hz (standard, feels smooth)</li>
-                <li>• 120-144 Hz (gaming, very smooth)</li>
-                <li>• 165+ Hz (competitive gaming, pro work)</li>
-              </ul>
-              <p style={{ marginTop: '12px', fontSize: '0.9rem', color: 'var(--text-muted)' }}><em>Your driver must match your monitor's native refresh rate. Mismatches cause stuttering and tearing.</em></p>
-            </div>
-
-            <div className="card">
-              <h3>Resolution (Pixels)</h3>
-              <p><strong>What it means:</strong> How many pixels (tiny dots) make up your display. More pixels = sharper, more detailed image.</p>
-              <p style={{ marginTop: '12px' }}><strong>Common resolutions:</strong></p>
-              <ul style={{ listStyle: 'none', padding: '0 0 0 12px', margin: '8px 0' }}>
-                <li>• 1920×1080 (Full HD, standard)</li>
-                <li>• 2560×1440 (QHD, sharp)</li>
-                <li>• 3840×2160 (4K, very sharp)</li>
-              </ul>
-              <p style={{ marginTop: '12px', fontSize: '0.9rem', color: 'var(--text-muted)' }}><em>Higher resolution uses more GPU power. Your driver needs a card with enough memory to handle it.</em></p>
-            </div>
-
-            <div className="card">
-              <h3>Scaling & DPI</h3>
-              <p><strong>What it is:</strong> When your monitor's native resolution is too sharp to read comfortably, scaling makes everything bigger.</p>
-              <p style={{ marginTop: '12px' }}><strong>Example:</strong> A 4K monitor with 150% scaling shows text and icons at readable size while keeping the crisp detail.</p>
-              <p style={{ marginTop: '12px', fontSize: '0.9rem', color: 'var(--text-muted)' }}><em>The driver handles this scaling, and it's where some blurriness can creep in. A fresh driver often fixes scaling problems.</em></p>
-            </div>
-
-            <div className="card">
-              <h3>GPU Memory (VRAM)</h3>
-              <p><strong>What it is:</strong> The memory built into your graphics card. It holds textures, models, and the frame being rendered.</p>
-              <p style={{ marginTop: '12px' }}><strong>Typical amounts:</strong></p>
-              <ul style={{ listStyle: 'none', padding: '0 0 0 12px', margin: '8px 0' }}>
-                <li>• 2-4 GB (basic, light gaming)</li>
-                <li>• 6-8 GB (modern gaming, video work)</li>
-                <li>• 12+ GB (high-end gaming, 4K, AI work)</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="block">
-        <div className="container">
-          <div className="section-head">
-            <span className="section-kicker">Multi-Monitor Setup</span>
-            <h2>Running Multiple Displays</h2>
-            <p>Your graphics driver is what detects, arranges, and displays content across multiple monitors. Here's how it all works.</p>
-          </div>
-
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-            <div className="card">
-              <h3>Connection Types</h3>
-              <p><strong>HDMI:</strong> Most common, good for most monitors, limited to 60 Hz above 4K.</p>
-              <p style={{ marginTop: '8px' }}><strong>DisplayPort:</strong> Newer standard, supports higher refresh rates and multiple monitors from one port.</p>
-              <p style={{ marginTop: '8px' }}><strong>USB-C:</strong> Convenient for laptops, can carry power and video in one cable.</p>
-              <p style={{ marginTop: '8px' }}><strong>Thunderbolt:</strong> Very fast, also supports multiple displays at high refresh rates.</p>
-              <p style={{ marginTop: '12px', fontSize: '0.9rem', color: 'var(--text-muted)' }}><em>Your driver recognizes which monitor is connected to which port and routes video accordingly.</em></p>
-            </div>
-
-            <div className="card">
-              <h3>Setting Up Multiple Monitors</h3>
-              <p><strong>Windows detects them automatically.</strong> Go to Settings → Display to arrange them: which is primary, whether they're to the left or right of each other, and whether they mirror or extend.</p>
-              <p style={{ marginTop: '12px' }}><strong>If a monitor isn't detected:</strong> Press Win+P to open the display menu, or right-click on the desktop and select Display settings. If it still doesn't appear, the driver may be out of date.</p>
-              <p style={{ marginTop: '12px', fontSize: '0.9rem', color: 'var(--text-muted)' }}><em>The driver physically routes the signal to the correct monitor, so an outdated driver won't detect a new display.</em></p>
-            </div>
-
-            <div className="card">
-              <h3>Performance Impact</h3>
-              <p>Running 2 displays uses roughly 1.5× the power of one. Running 3 or more can significantly impact gaming performance and battery life on laptops.</p>
-              <p style={{ marginTop: '12px' }}><strong>For gaming:</strong> Running your game on one monitor at high refresh while using others for chat or web browsing is fine. Stretching the game across multiple monitors uses a lot of GPU power.</p>
-            </div>
-
-            <div className="card">
-              <h3>Refresh Rate Mismatches</h3>
-              <p>If you connect a 60 Hz and a 144 Hz monitor to the same system, both will work — but they run at different rates. Some drivers let you choose independent rates; others sync them to the lowest common value.</p>
-              <p style={{ marginTop: '12px', fontSize: '0.9rem', color: 'var(--text-muted)' }}><em>For gaming, plug your high-refresh monitor into the main GPU output and set your game to run there.</em></p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="block" style={{ background: 'var(--bg-light)' }}>
-        <div className="container">
-          <div className="section-head">
-            <span className="section-kicker">Decode the jargon</span>
-            <h2>Common Device Manager codes for this category</h2>
-            <p>These short codes appear next to the display adapter in Device Manager when something goes wrong. Here is what the most common ones actually mean — and the fix that usually clears them.</p>
-          </div>
-          <div className="table-wrap">
-            <table className="dwtable">
-              <thead>
-                <tr><th scope="col">Code</th><th scope="col">What it means in plain English</th><th scope="col">The usual fix</th></tr>
-              </thead>
-              <tbody>
-                <tr><td><code>Code 43</code></td><td>The driver told the system the graphics device stopped responding.</td><td>Clean reinstall of the latest driver; on desktops, check the card's seating and power cables.</td></tr>
-                <tr><td><code>Code 31</code></td><td>The system can't load the driver for the display adapter.</td><td>Uninstall the device, restart, then install the maker's current driver.</td></tr>
-                <tr><td><code>Code 22</code></td><td>The display adapter has been disabled.</td><td>Re-enable it in Device Manager, then restart.</td></tr>
-                <tr><td><code>Code 10</code></td><td>The device cannot start — usually a corrupt or mismatched driver.</td><td>Remove the old driver software completely, then install fresh.</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section className="block">
-        <div className="container">
-          <div className="section-head">
-            <span className="section-kicker">Quick Answers</span>
-            <h2>Frequently Asked Questions</h2>
-            <p>The questions readers send us most about this topic.</p>
-          </div>
-          <div className="faq">
-            <details>
-              <summary>Why does my screen flicker after a driver update?</summary>
-              <div className="faq-body">
-                <p>Flicker usually means the new driver and an old leftover are fighting, or the refresh rate reset. Do a clean reinstall and confirm your display's refresh rate matches the panel's native value.</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  "Translates rendering to GPU commands",
+                  "Manages VRAM and frame buffers",
+                  "Handles multi-monitor, scaling, refresh",
+                  "Enables hardware video acceleration"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-2xl">
+                    <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700">
+                      ✓
+                    </div>
+                    <span className="text-slate-700 font-medium">{item}</span>
+                  </div>
+                ))}
               </div>
-            </details>
-            <details>
-              <summary>My second monitor isn't detected — is that the driver?</summary>
-              <div className="faq-body">
-                <p>Often yes. A fresh graphics driver, plus checking the cable and the correct input on the monitor, resolves most detection problems. The driver is what enumerates and arranges attached displays.</p>
+            </div>
+
+            <div className="relative">
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-3xl p-8 shadow-lg">
+                <Image
+                  src="/assets/images/graphics-what.svg"
+                  alt="Diagram showing how graphics driver connects GPU to display"
+                  width={600}
+                  height={450}
+                  className="w-full h-auto rounded-2xl"
+                />
               </div>
-            </details>
-            <details>
-              <summary>Should I update my graphics driver even if nothing is wrong?</summary>
-              <div className="faq-body">
-                <p>If your machine is stable and you don't play new games, a relaxed pace is fine — every few months, or when a fix you need ships. Gamers benefit most from staying current, since new titles often get day-one driver optimisations.</p>
-              </div>
-            </details>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="block">
-        <div className="container">
-          <div className="cta-card" style={{ background: 'var(--navy)', borderRadius: 'var(--radius-lg)', padding: '80px 40px', textAlign: 'center', color: '#fff' }}>
-            <span className="section-kicker" style={{ color: 'var(--primary)' }}>Explore More</span>
-            <h2 style={{ color: '#fff' }}>Want us to explain another driver topic?</h2>
-            <p style={{ color: 'var(--text-light)', maxWidth: '600px', margin: '0 auto 40px' }}>Our friendly overview covers every major hardware category — from the device on your desk to the chips inside your laptop.</p>
-            <div className="hero-actions" style={{ justifyContent: 'center' }}>
-              <Link className="btn btn-primary" href="/drivers/">
-                Browse all topics
-              </Link>
-              <Link className="btn btn-light" href="/knowledge/" style={{ background: 'transparent', color: '#fff', borderColor: 'rgba(255,255,255,0.2)' }}>
-                Visit Knowledge Hub
-              </Link>
+      {/* Troubleshooting */}
+      <section className="py-20 md:py-28 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <div className="bg-white border border-slate-200 rounded-3xl p-8 shadow-lg">
+                <Image
+                  src="/assets/images/graphics-fix.svg"
+                  alt="Troubleshooting diagram for graphics driver issues"
+                  width={600}
+                  height={450}
+                  className="rounded-2xl w-full h-auto"
+                />
+              </div>
+            </div>
+            <div className="order-1 lg:order-2">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">Common Display Frustrations</h2>
+              <div className="space-y-4">
+                {[
+                  { title: "Screen flickering or going black", desc: "Classic driver conflict!" },
+                  { title: "Stuttering or low FPS in games", desc: "Driver is out of date or corrupted!" },
+                  { title: "Resolution won't stick or wrong refresh", desc: "Driver needs a clean reinstall!" }
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3 p-5 rounded-2xl bg-white border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-indigo-500 text-white text-xl font-bold shadow-md">
+                      {i+1}
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
+                      <p className="text-slate-600">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p className="text-lg text-slate-600 mt-8 leading-relaxed">
+                The solution is almost always a clean, full reinstall of the latest driver from your GPU manufacturer's site! For laptops, your laptop maker's tuned build is often best!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5 Steps Section */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-sm font-bold text-blue-700 uppercase tracking-widest mb-4 block">Step-by-step guide</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">Fix it in 5 Careful Steps</h2>
+          </div>
+
+          <div className="space-y-6">
+            {[
+              {
+                title: "Note your exact GPU model",
+                desc: "Device Manager → Display adapters (or Settings → About → System info)!"
+              },
+              {
+                title: "Download the right driver first",
+                desc: "Get official driver from NVIDIA/AMD/Intel or laptop manufacturer first!"
+              },
+              {
+                title: "Uninstall current driver cleanly",
+                desc: "In Device Manager, delete adapter and tick to remove software!"
+              },
+              {
+                title: "Restart, install fresh driver",
+                desc: "Reboot, run installer you downloaded, choose clean/custom install!"
+              },
+              {
+                title: "Restart one last time",
+                desc: "Full reboot confirms everything is loaded cleanly!"
+              }
+            ].map((step, i) => (
+              <div key={i} className="group flex gap-6 p-7 rounded-3xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 hover:border-blue-300 hover:shadow-xl transition-all">
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-500 text-white text-2xl font-extrabold shadow-lg">
+                  {i+1}
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">{step.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Performance & Refresh / Resolution */}
+      <section className="py-20 md:py-28 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Refresh Rate, Resolution & Scaling</h2>
+            <p className="text-lg text-slate-600">Understanding your display settings helps you get the best visuals and performance!</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Refresh Rate (Hz)",
+                desc: "60 Hz for basic, 120/144+ for gaming. Driver matches this to your panel!"
+              },
+              {
+                title: "Resolution (Pixels)",
+                desc: "1080p, 1440p, 4K — higher needs more VRAM and power!"
+              },
+              {
+                title: "Scaling & DPI",
+                desc: "Makes content bigger for high-res displays; driver handles this!"
+              },
+              {
+                title: "VRAM Usage",
+                desc: "More VRAM means better performance at higher settings/resolutions!"
+              }
+            ].map((card, i) => (
+              <div key={i} className="rounded-3xl bg-white border border-slate-200 p-7 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+                <h3 className="text-xl font-bold text-slate-900 mb-4">{card.title}</h3>
+                <p className="text-slate-600">{card.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Multi-Monitor */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 text-center mb-12">Multi-Monitor Setup & Connections</h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "HDMI",
+                desc: "Most common, great for most monitors; limited to 60Hz at 4K on older cables!"
+              },
+              {
+                title: "DisplayPort",
+                desc: "Best for high refresh rates! Supports 144+ Hz at 1440p/4K with newer cables!"
+              },
+              {
+                title: "USB-C/Thunderbolt",
+                desc: "Convenient for laptops; carries data, power, and video over one cable!"
+              },
+              {
+                title: "Setting Up Multiple Monitors",
+                desc: "Windows detects them automatically; arrange them in Display Settings!"
+              },
+              {
+                title: "Primary Display",
+                desc: "Choose which monitor is main for Windows, apps, and games!"
+              },
+              {
+                title: "Performance with Multiple Monitors",
+                desc: "Extra displays use some GPU resources, but usually fine for most tasks!"
+              }
+            ].map((card, i) => (
+              <div key={i} className="rounded-3xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 p-7">
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{card.title}</h3>
+                <p className="text-slate-600">{card.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Device Manager Codes */}
+      <section className="py-20 md:py-28 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Common Device Manager Codes</h2>
+            <p className="text-lg text-slate-600">Here's what they mean and the usual fix!</p>
+          </div>
+
+          <div className="overflow-hidden bg-white rounded-3xl shadow-lg border border-slate-200">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left">
+                <thead className="bg-gradient-to-r from-slate-50 to-blue-50">
+                  <tr>
+                    <th className="px-8 py-5 font-extrabold text-slate-900 border-b border-slate-200">Code</th>
+                    <th className="px-8 py-5 font-extrabold text-slate-900 border-b border-slate-200">What it Means</th>
+                    <th className="px-8 py-5 font-extrabold text-slate-900 border-b border-slate-200">The Fix</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200">
+                  {[
+                    {
+                      code: "Code 43",
+                      meaning: "The driver told the OS the GPU has stopped responding!",
+                      fix: "Clean driver reinstall!"
+                    },
+                    {
+                      code: "Code 31",
+                      meaning: "The OS couldn't load the display driver!",
+                      fix: "Uninstall, restart, install fresh driver!"
+                    },
+                    {
+                      code: "Code 22",
+                      meaning: "The display adapter is disabled!",
+                      fix: "Enable the device in Device Manager, then restart!"
+                    },
+                    {
+                      code: "Code 10",
+                      meaning: "The adapter cannot start! Usually corrupt/mismatched driver!",
+                      fix: "Remove old driver software completely, install fresh!"
+                    }
+                  ].map((row, i) => (
+                    <tr key={i} className="hover:bg-blue-50 transition-colors">
+                      <td className="px-8 py-6"><code className="bg-blue-100 text-blue-800 px-3 py-1 rounded-lg font-bold">{row.code}</code></td>
+                      <td className="px-8 py-6 text-slate-600">{row.meaning}</td>
+                      <td className="px-8 py-6 text-slate-600">{row.fix}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Frequently Asked Questions</h2>
+            <p className="text-lg text-slate-600">Questions readers ask most often about graphics drivers!</p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "My screen flickers after a driver update — what do I do?",
+                a: "Flicker is usually old/new driver conflicts — clean reinstall of driver + verify refresh rate matches panel!"
+              },
+              {
+                q: "Second monitor not detected — is that the driver?",
+                a: "Often! Clean driver reinstall + check cable/port/input on the monitor!"
+              },
+              {
+                q: "Should I update my graphics driver if everything works?",
+                a: "For regular use, every few months is okay! For gaming, update for new games' day-one patches!"
+              }
+            ].map((faq, i) => (
+              <details key={i} className="group border border-slate-200 rounded-3xl bg-white overflow-hidden shadow-sm hover:shadow-md transition-all">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 p-6 font-bold text-slate-900 bg-slate-50 hover:bg-blue-50 transition-colors">
+                  <span>{faq.q}</span>
+                  <span className="transition group-open:rotate-180 bg-white border border-slate-200 rounded-full p-2">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="text-slate-500">
+                      <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                  </span>
+                </summary>
+                <div className="border-t border-slate-200 p-6 text-slate-600 leading-relaxed bg-white">
+                  {faq.a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 md:py-28">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900 px-8 py-16 md:px-16 md:py-24 text-center shadow-2xl">
+            <div className="absolute inset-0">
+              <div className="absolute left-0 top-0 h-64 w-64 rounded-full bg-indigo-500/20 blur-3xl" />
+              <div className="absolute right-0 bottom-0 h-64 w-64 rounded-full bg-blue-500/15 blur-3xl" />
+            </div>
+            <div className="relative">
+              <span className="text-sm font-bold text-blue-300 uppercase tracking-widest block mb-4">Explore More</span>
+              <h2 className="mx-auto max-w-2xl text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight">
+                Want to Learn About All Driver Types?
+              </h2>
+              <p className="mx-auto max-w-xl text-lg leading-relaxed text-slate-300 mb-10">
+                Our friendly guide covers every major hardware category — from your printer to the chips inside your laptop!
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link
+                  className="inline-flex items-center justify-center px-10 py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-500 text-base font-bold text-white shadow-lg hover:scale-105 transition-all"
+                  href="/drivers/"
+                >
+                  Browse All Driver Types
+                </Link>
+                <Link
+                  className="inline-flex items-center justify-center px-10 py-4 rounded-xl border-2 border-slate-600 bg-slate-800/50 text-base font-bold text-white backdrop-blur-sm hover:border-blue-400 transition-all"
+                  href="/knowledge/"
+                >
+                  Visit Knowledge Hub
+                </Link>
+              </div>
             </div>
           </div>
         </div>

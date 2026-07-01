@@ -22,7 +22,7 @@ const posts = [
   {
     slug: 'inside-a-graphics-driver-update',
     tag: 'Graphics',
-    tagColor: '#7C3AED',
+    tagColor: '#2563EB',
     date: 'May 21, 2026',
     readTime: '9 min',
     title: 'Inside a Graphics Driver Update: What Actually Changes',
@@ -32,7 +32,7 @@ const posts = [
   {
     slug: 'the-hidden-world-of-audio-drivers',
     tag: 'Audio',
-    tagColor: '#D97706',
+    tagColor: '#3b82f6',
     date: 'May 21, 2026',
     readTime: '7 min',
     title: 'The Hidden World of Audio Drivers: Why Sound Quality Is Mostly Software',
@@ -42,7 +42,7 @@ const posts = [
   {
     slug: 'why-your-wifi-is-slower',
     tag: 'Networking',
-    tagColor: '#0891B2',
+    tagColor: '#0284c7',
     date: 'May 21, 2026',
     readTime: '6 min',
     title: "Why Your Wi-Fi Is Slower Than Your Roommate's on the Same Router",
@@ -52,7 +52,7 @@ const posts = [
   {
     slug: 'plug-and-play-demystified',
     tag: 'USB',
-    tagColor: '#059669',
+    tagColor: '#0ea5e9',
     date: 'May 21, 2026',
     readTime: '7 min',
     title: 'Plug-and-Play, Demystified: How Your PC Knows What You Just Connected',
@@ -62,7 +62,7 @@ const posts = [
   {
     slug: 'the-quiet-chipset-driver',
     tag: 'System',
-    tagColor: '#475569',
+    tagColor: '#1d4ed8',
     date: 'May 21, 2026',
     readTime: '8 min',
     title: 'The Quiet Importance of the Chipset Driver Nobody Talks About',
@@ -82,7 +82,7 @@ const posts = [
   {
     slug: 'how-to-update-drivers-safely',
     tag: 'How-To',
-    tagColor: '#16A34A',
+    tagColor: '#1e40af',
     date: 'May 22, 2026',
     readTime: '7 min',
     title: 'How to Update Drivers Safely (Without Breaking Anything)',
@@ -92,7 +92,7 @@ const posts = [
   {
     slug: 'why-do-drivers-crash',
     tag: 'Troubleshooting',
-    tagColor: '#DC2626',
+    tagColor: '#3730a3',
     date: 'May 23, 2026',
     readTime: '6 min',
     title: 'Why Do Drivers Crash? (And What You Can Do About It)',
@@ -102,7 +102,7 @@ const posts = [
   {
     slug: 'ssd-drivers-what-you-need-to-know',
     tag: 'Storage',
-    tagColor: '#0891B2',
+    tagColor: '#1e3a8a',
     date: 'May 24, 2026',
     readTime: '5 min',
     title: 'SSD Drivers: Do You Need to Update Them?',
@@ -112,17 +112,17 @@ const posts = [
   {
     slug: 'why-your-device-stopped-after-update',
     tag: 'Troubleshooting',
-    tagColor: '#DC2626',
+    tagColor: '#312e81',
     date: 'May 25, 2026',
     readTime: '6 min',
     title: 'Why Your Device Stopped Working After the Last Update',
-    desc: 'A driver update was supposed to fix things, but now your device does not work. Here is what happened and how to get back on track quickly.',
+    desc: 'A driver update was supposed to fix things, but now your device doesn\'t work. Here is what happened and how to get back on track quickly.',
     image: '/assets/images/printer-what.svg',
   },
   {
     slug: 'driver-signing-explained',
     tag: 'Security',
-    tagColor: '#7C3AED',
+    tagColor: '#2563EB',
     date: 'May 26, 2026',
     readTime: '7 min',
     title: 'Driver Signing: Why Your Computer Cares Who Made the Software',
@@ -136,7 +136,7 @@ const posts = [
     date: 'May 27, 2026',
     readTime: '7 min',
     title: "Virtual Drivers: When the 'Hardware' Is Not Hardware At All",
-    desc: 'Some drivers do not talk to physical devices at all. They create virtual devices that trick your computer into doing useful things.',
+    desc: 'Some drivers don\'t talk to physical devices at all. They create virtual devices that trick your computer into doing useful things.',
     image: '/assets/images/scanner-what.svg',
   },
 ]
@@ -153,167 +153,200 @@ const popularTags = ['Driver Errors', 'Wi-Fi Issues', 'GPU Updates', 'Printer Pr
 export default function Blog() {
   return (
     <>
-      <section className="hero-section">
-        <div className="hero-container">
-          <span className="hero-kicker">The Driver Blog</span>
-          <h2 className="hero-h2">Friendly, Useful Reads About <br />How Your Computer Actually Works</h2>
-          <p className="hero-p">
-            Plain-English articles, calm knowledge, and the occasional "wait, that's what it does?" moment. Written for curious users who want practical answers without getting buried in technical jargon.
-          </p>
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 py-24 md:py-32">
+        <div className="absolute inset-0 bg-[url('/assets/images/grid-pattern.svg')] opacity-20"></div>
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+        
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/10 px-6 py-3 text-xs font-bold uppercase tracking-[0.3em] text-blue-300 mb-6">
+              The Driver Blog
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+              Friendly, Useful Reads About <br />
+              How Your Computer Actually Works
+            </h1>
+            
+            <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
+              Plain-English articles, calm knowledge, and the occasional "wait, that's what it does?" moment. Written for curious users who want practical answers without getting buried in technical jargon.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* ══ WHAT YOU'LL FIND STRIP ══ */}
-      <section className="block" style={{ background: 'var(--bg-light)', paddingTop: '64px', paddingBottom: '64px' }}>
-        <div className="container">
-          <div style={{
-            display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '48px', alignItems: 'center'
-          }}>
-            {/* Left Column */}
+      {/* What You'll Find Strip */}
+      <section className="py-16 md:py-24 bg-gradient-to-b from-white to-slate-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <span className="section-kicker">What You&apos;ll Find</span>
-              <h2 style={{ marginBottom: '16px' }}>Helpful reads for everyday users</h2>
-              <p style={{ marginBottom: '32px', fontSize: '1.1rem' }}>
-                We believe that understanding your computer shouldn&apos;t require a degree in computer science.
+              <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.25em] text-blue-700 mb-4">
+                What You'll Find
+              </div>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+                Helpful reads for everyday users
+              </h2>
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                We believe that understanding your computer shouldn't require a degree in computer science.
               </p>
               
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div className="space-y-4">
                 {finds.map((f, i) => (
-                  <div key={i} className="animate-fade-in hover:border-blue-500 hover:translate-x-1 transition-all duration-300" style={{
-                    display: 'flex', alignItems: 'center', gap: '16px',
-                    padding: '16px 24px', borderRadius: 'var(--radius-md)',
-                    background: '#fff', border: '1px solid var(--border)',
-                    boxShadow: 'var(--shadow-xs)'
-                  }}>
-                    <div style={{
-                      width: 32, height: 32, borderRadius: '50%', background: 'var(--primary-soft)',
-                      color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontWeight: 800, fontSize: '14px', flexShrink: 0
-                    }}>
-                      ✓
-                    </div>
-                    <span style={{ fontWeight: 600, color: 'var(--text-main)', fontSize: '1rem' }}>{f}</span>
+                  <div key={i} className="flex items-center gap-3 p-4 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700 font-bold">✓</span>
+                    <span className="text-slate-700 font-medium">{f}</span>
                   </div>
                 ))}
               </div>
             </div>
-
-            {/* Right Column */}
-            <div style={{
-              borderRadius: 'var(--radius-xl)',
-              background: 'linear-gradient(135deg, #0A0F1E 0%, #1C2540 100%)',
-              padding: '56px 48px', position: 'relative', overflow: 'hidden',
-              boxShadow: '0 32px 64px rgba(10,15,30,0.15)',
-              display: 'flex', flexDirection: 'column', justifyContent: 'center',
-              minHeight: '100%'
-            }}>
-              <div aria-hidden="true" style={{
-                position: 'absolute', top: '-80px', right: '-60px',
-                width: 300, height: 300, borderRadius: '50%',
-                background: 'radial-gradient(circle, rgba(37,99,235,0.2) 0%, transparent 70%)'
-              }} />
-              
-              <div style={{ position: 'relative', zIndex: 1 }}>
-                <span style={{
-                  display: 'inline-flex', alignItems: 'center', padding: '6px 14px',
-                  borderRadius: '9999px', background: 'rgba(255,255,255,0.1)',
-                  color: '#60A5FA', fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em',
-                  marginBottom: '24px', border: '1px solid rgba(96,165,250,0.2)'
-                }}>
-                  NEW ARTICLES ADDED REGULARLY
-                </span>
+            
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-200 to-sky-200 rounded-3xl blur-xl opacity-50"></div>
+              <div className="relative rounded-3xl bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 p-10">
+                <div className="absolute -top-10 -right-10 w-48 h-48 rounded-full bg-blue-500/20 blur-3xl"></div>
                 
-                <h3 style={{ color: '#fff', fontSize: '2rem', marginBottom: '16px', lineHeight: 1.2 }}>
-                  Learn Something Useful Today
-                </h3>
-                
-                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.1rem', lineHeight: 1.7, marginBottom: 0 }}>
-                  Short reads, practical explanations, and helpful technology insights for everyday users. No jargon, just clarity.
-                </p>
+                <div className="relative">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-blue-300 mb-6">
+                    NEW ARTICLES ADDED REGULARLY
+                  </span>
+                  
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                    Learn Something Useful Today
+                  </h3>
+                  
+                  <p className="text-slate-300 text-lg leading-relaxed">
+                    Short reads, practical explanations, and helpful technology insights for everyday users. No jargon, just clarity.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ══ EDITOR'S PICK ══ */}
-      <section className="block" style={{ paddingTop: '20px', paddingBottom: '20px' }}>
-        <div className="container">
-          <div className="blog-ep-header">
-            <span className="section-kicker">Editor&apos;s Pick</span>
-            <h2>This Week&apos;s Featured Read</h2>
-          </div>
-
-          {/* Software → Driver → Hardware diagram */}
-          <div className="blog-diagram" aria-hidden="true">
-            <div className="bd-box bd-software">Software</div>
-            <svg className="bd-arrow" width="36" height="20" viewBox="0 0 36 20" fill="none">
-              <path d="M0 10h32M26 4l6 6-6 6" stroke="#2563EB" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            <div className="bd-box bd-driver">Driver</div>
-            <svg className="bd-arrow" width="36" height="20" viewBox="0 0 36 20" fill="none">
-              <path d="M0 10h32M26 4l6 6-6 6" stroke="#2563EB" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            <div className="bd-box bd-hardware">Hardware</div>
-          </div>
-
-          <Link href={`/blog/${featured.slug}/`} className="blog-featured-card">
-            <div className="bfc-media">
-              <div className="bfc-badges">
-                <span className="bfc-badge bfc-badge-green">Beginner</span>
-                <span className="bfc-badge bfc-badge-blue">5 Minute Read</span>
-              </div>
-              <Image src={featured.image} alt={featured.title} width={480} height={360} priority
-                style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '28px' }} />
+      {/* Editor's Pick */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.25em] text-blue-700 mb-4">
+              Editor's Pick
             </div>
-            <div className="bfc-body">
-              <div className="bfc-meta">
-                <span className="bfc-tag">Beginner</span>
-                <span className="bfc-time">5 min read · Featured</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
+              This Week's Featured Read
+            </h2>
+          </div>
+          
+          <Link href={`/blog/${featured.slug}/`} className="group">
+            <div className="grid lg:grid-cols-2 gap-12 items-center bg-gradient-to-br from-blue-50 to-sky-50 border border-blue-200 rounded-3xl p-8 lg:p-10 hover:shadow-xl transition-shadow">
+              <div className="relative h-80 lg:h-[400px]">
+                <div className="absolute inset-0 bg-white rounded-2xl p-8">
+                  <Image 
+                    src={featured.image} 
+                    alt={featured.title} 
+                    fill 
+                    style={{ objectFit: 'contain', padding: '20px' }}
+                    priority
+                  />
+                </div>
+                
+                <div className="absolute top-4 left-4 flex gap-2">
+                  <span className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-700 text-xs font-bold">
+                    Beginner
+                  </span>
+                  <span className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-xs font-bold">
+                    5 Minute Read
+                  </span>
+                </div>
               </div>
-              <h2 className="bfc-title">{featured.title}</h2>
-              <p className="bfc-desc">{featured.desc}</p>
-              <span className="bfc-cta">
-                Read the Full Article
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-              </span>
+              
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold">
+                    {featured.tag}
+                  </span>
+                  <span className="text-slate-500 text-sm">
+                    {featured.date} · {featured.readTime} read · Featured
+                  </span>
+                </div>
+                
+                <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-4 group-hover:text-blue-700 transition-colors">
+                  {featured.title}
+                </h3>
+                
+                <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                  {featured.desc}
+                </p>
+                
+                <div className="flex items-center gap-2 text-blue-700 font-bold text-lg">
+                  Read the Full Article
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="group-hover:translate-x-1 transition-transform">
+                    <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+              </div>
             </div>
           </Link>
         </div>
       </section>
 
-      {/* ══ LATEST ARTICLES ══ */}
-      <section className="block" id="latest" style={{ background: 'var(--bg-light)', paddingTop: '20px', paddingBottom: '20px' }}>
-        <div className="container">
-          <div className="section-head">
-            <span className="section-kicker">Latest Articles</span>
-            <h2>Fresh Reads From The Driver Blog</h2>
-            <p>Bite-sized, friendly, and always written by humans who enjoy this stuff.</p>
+      {/* Latest Articles */}
+      <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 to-white" id="latest">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.25em] text-blue-700 mb-4">
+              Latest Articles
+            </div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+              Fresh Reads From The Driver Blog
+            </h2>
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Bite-sized, friendly, and always written by humans who enjoy this stuff.
+            </p>
           </div>
-
-          <div className="blog-articles-grid">
-            {posts.map(post => (
-              <Link key={post.slug} href={`/blog/${post.slug}/`} className="blog-article-card">
-                <div className="bac-thumb">
-                  <Image src={post.image} alt={post.title} fill style={{ objectFit: 'contain', padding: '20px' }} />
-                  <span className="bac-tag" style={{ background: post.tagColor }}>{post.tag}</span>
-                </div>
-                <div className="bac-body">
-                  <div className="bac-meta">
-                    <span className="bac-date">{post.date}</span>
-                    <span className="bac-sep" aria-hidden="true">•</span>
-                    <span className="bac-time">{post.readTime} read</span>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {posts.map((post) => (
+              <Link key={post.slug} href={`/blog/${post.slug}/`} className="group rounded-2xl bg-white border border-slate-200 p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+                <div className="relative h-52 mb-6">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-sky-50 rounded-xl p-6">
+                    <Image 
+                      src={post.image} 
+                      alt={post.title} 
+                      fill 
+                      style={{ objectFit: 'contain', padding: '10px' }}
+                    />
                   </div>
-                  <h3 className="bac-title">{post.title}</h3>
-                  <p className="bac-desc">{post.desc}</p>
-                  <div className="bac-author">
-                    <span className="bac-author-dot" aria-hidden="true" />
-                    <span>Driver Info Hub editorial team</span>
-                  </div>
-                  <span className="bac-read">
-                    Read article
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                  <span 
+                    className="absolute top-4 left-4 inline-flex items-center px-3 py-1 rounded-full text-xs font-bold text-white shadow-md"
+                    style={{ backgroundColor: post.tagColor }}
+                  >
+                    {post.tag}
                   </span>
+                </div>
+                
+                <div className="flex items-center gap-2 mb-4 text-sm text-slate-500">
+                  <span>{post.date}</span>
+                  <span>•</span>
+                  <span>{post.readTime} read</span>
+                </div>
+                
+                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-700 transition-colors">
+                  {post.title}
+                </h3>
+                
+                <p className="text-slate-600 mb-6 leading-relaxed">{post.desc}</p>
+                
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-2 h-2 rounded-full bg-slate-300"></div>
+                  <span className="text-slate-500 text-sm">Driver Info Hub editorial team</span>
+                </div>
+                
+                <div className="flex items-center gap-2 text-blue-700 font-bold">
+                  Read article
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="group-hover:translate-x-1 transition-transform">
+                    <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </div>
               </Link>
             ))}
@@ -321,33 +354,51 @@ export default function Blog() {
         </div>
       </section>
 
-      {/* ══ READER REQUESTS CTA ══ */}
-      <section className="block" style={{ paddingTop: '20px', paddingBottom: '20px' }}>
-        <div className="container">
-          <div className="blog-cta-grid">
-            <div className="blog-cta-left">
-              <span className="section-kicker">Reader Requests</span>
-              <h2>Want a Topic<br />Covered?</h2>
-              <p>
-                Drop us a line with a question, a confused symptom, or a topic you wish someone
-                would just explain plainly. We pick reader questions for new articles all the time.
+      {/* Reader Requests CTA */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.25em] text-blue-700 mb-4">
+                Reader Requests
+              </div>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+                Want a Topic Covered?
+              </h2>
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                Drop us a line with a question, a confused symptom, or a topic you wish someone would just explain plainly. We pick reader questions for new articles all the time.
               </p>
-              <div className="blog-cta-actions">
-                <Link href="/contact/" className="btn btn-primary">Suggest a Topic</Link>
-                <Link href="/knowledge/" className="btn btn-outline">Need Help Right Now?</Link>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/contact/" className="inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-sky-500 text-white font-bold hover:from-blue-700 hover:to-sky-600 transition-all shadow-lg hover:shadow-xl">
+                  Suggest a Topic
+                </Link>
+                <Link href="/knowledge/" className="inline-flex items-center justify-center px-8 py-4 rounded-2xl border-2 border-slate-300 text-slate-700 font-bold hover:border-blue-400 hover:text-blue-700 transition-all">
+                  Need Help Right Now?
+                </Link>
               </div>
             </div>
-            <div className="blog-cta-cards">
-              <div className="blog-cta-card">
-                <h4>Reader Questions</h4>
-                <p>Many of our most popular articles started as a simple reader question.</p>
-                <div className="blog-cta-tags">
-                  {popularTags.map(t => <span key={t} className="blog-cta-tag">{t}</span>)}
+            
+            <div className="space-y-6">
+              <div className="rounded-2xl bg-gradient-to-br from-blue-50 to-sky-50 border border-blue-200 p-8">
+                <h3 className="text-xl font-bold text-slate-900 mb-4">Reader Questions</h3>
+                <p className="text-slate-600 mb-6 leading-relaxed">
+                  Many of our most popular articles started as a simple reader question.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {popularTags.map((tag, i) => (
+                    <span key={i} className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
-              <div className="blog-cta-card">
-                <h4>Plain-English Answers</h4>
-                <p>We focus on practical explanations without the jargon, acronyms, or unnecessary complexity.</p>
+              
+              <div className="rounded-2xl bg-gradient-to-br from-slate-50 to-gray-50 border border-slate-200 p-8">
+                <h3 className="text-xl font-bold text-slate-900 mb-4">Plain-English Answers</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  We focus on practical explanations without the jargon, acronyms, or unnecessary complexity.
+                </p>
               </div>
             </div>
           </div>

@@ -65,217 +65,180 @@ const editorial = [
 export default function About() {
   return (
     <>
-      <section className="hero-section">
-        <div className="hero-container">
-          <span className="hero-kicker">About Driver Info Hub</span>
-          <h2 className="hero-h2">We Translate the Technical, <br />So You Can Get On With Your Day</h2>
-          <p className="hero-p">
-            Driver Info Hub is a small, independent education project with one stubborn belief: technology should not feel intimidating. Every guide here is written for beginners while still being useful for advanced users who want clarity without noise.
-          </p>
+      {/* 1. Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 py-24 md:py-32">
+        <div className="absolute inset-0 bg-[url('/assets/images/grid-pattern.svg')] opacity-20"></div>
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+        
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/10 px-6 py-3 text-xs font-bold uppercase tracking-[0.3em] text-blue-300 mb-6">
+              About Driver Info Hub
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+              We Translate the Technical, <br />
+              So You Can Get On With Your Day
+            </h1>
+            
+            <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
+              Driver Info Hub is a small, independent education project with one stubborn belief: technology should not feel intimidating. Every guide here is written for beginners while still being useful for advanced users who want clarity without noise.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* ══════════════════════════════════════
-          2. WHY WE EXIST — split
-      ══════════════════════════════════════ */}
-      <section className="block" style={{ background: 'var(--bg-light)', paddingTop: '20px', paddingBottom: '20px' }}>
-        <div className="container">
-          <div className="about-split">
-            <div className="about-split-text">
-              <p className="about-sec-label">Why Driver Info Hub Exists</p>
-              <p className="about-why-lead">
-                Most technical documentation assumes too much knowledge or buries simple answers
-                under layers of complexity. Driver Info Hub exists to fix that — by turning
-                confusing driver issues into clear, actionable explanations.
+      {/* 2. Why We Exist Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-b from-white to-slate-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <p className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.25em] text-blue-700 mb-4">
+                Why We Exist
               </p>
-              <ul className="about-chips">
+              
+              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+                Most technical documentation assumes too much knowledge or buries simple answers under layers of complexity. We exist to fix that.
+              </h2>
+              
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                Driver Info Hub turns confusing driver issues into clear, actionable explanations. We believe technology should feel approachable, not intimidating.
+              </p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 {featureChips.map(c => (
-                  <li key={c} className="about-chip">
-                    <span className="about-chip-check" aria-hidden="true" />
-                    {c}
-                  </li>
+                  <div key={c} className="flex items-center gap-3 p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700 font-bold">✓</div>
+                    <span className="text-slate-700 font-medium">{c}</span>
+                  </div>
                 ))}
-              </ul>
-              <div className="about-promise-box">
-                <p className="about-promise-main">Simple. Clear. Useful.</p>
-                <p className="about-promise-sub">That&apos;s the Driver Info Hub promise.</p>
+              </div>
+              
+              <div className="rounded-2xl bg-gradient-to-r from-blue-50 to-sky-50 border border-blue-200 p-6">
+                <p className="text-2xl font-bold text-blue-900 mb-1">Simple. Clear. Useful.</p>
+                <p className="text-slate-600">That's the Driver Info Hub promise.</p>
               </div>
             </div>
-            <div className="about-split-media">
-              <Image
-                src="/assets/images/home-translator.svg"
-                alt="Software speaking to hardware through a driver"
-                width={560}
-                height={480}
-                priority
-                style={{ width: '100%', height: 'auto', borderRadius: '20px', boxShadow: 'var(--shadow-lg)' }}
-              />
+            
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-200 to-sky-200 rounded-3xl blur-xl opacity-50"></div>
+              <div className="relative">
+                <Image
+                  src="/assets/images/home-translator.svg"
+                  alt="Software speaking to hardware through a driver"
+                  width={560}
+                  height={480}
+                  priority
+                  className="w-full h-auto rounded-3xl shadow-2xl"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ══════════════════════════════════════
-          3. FRIENDLY VOICE — split reversed
-      ══════════════════════════════════════ */}
-      <section className="block" style={{ paddingTop: '20px', paddingBottom: '20px' }}>
-        <div className="container">
-          <div className="about-split about-split-rev">
-            <div className="about-split-media">
-              <Image
-                src="/assets/images/knowledge-flow.svg"
-                alt="Driver Info Hub knowledge flow diagram"
-                width={560}
-                height={480}
-                style={{ width: '100%', height: 'auto', borderRadius: '20px', boxShadow: 'var(--shadow-lg)' }}
-              />
+      {/* 3. Friendly Voice Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="order-2 lg:order-1 relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-200 to-sky-200 rounded-3xl blur-xl opacity-50"></div>
+              <div className="relative">
+                <Image
+                  src="/assets/images/knowledge-flow.svg"
+                  alt="Driver Info Hub knowledge flow diagram"
+                  width={560}
+                  height={480}
+                  className="w-full h-auto rounded-3xl shadow-2xl"
+                />
+              </div>
             </div>
-            <div className="about-split-text">
-              <p className="about-sec-label">ABOUT DRIVER INFO HUB</p>
-              <h2>A Friendly Voice in a Noisy Tech World</h2>
-              <p>
-                We are a small, independent education project built around one stubborn idea —
-                technology should not feel intimidating. Every overview on this site is written
-                to make sense the first time you read it, whether you are a complete beginner or
-                someone who already knows their way around a kernel debugger.
+            
+            <div className="order-1 lg:order-2">
+              <p className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.25em] text-blue-700 mb-4">
+                About Driver Info Hub
               </p>
-              <p>
-                No sponsorships. No affiliate links. No &ldquo;instant driver updater&rdquo; nonsense.
-                Just clear, honest explanations of how things actually work.
+              
+              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+                A Friendly Voice in a Noisy Tech World
+              </h2>
+              
+              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                We are a small, independent education project built around one stubborn idea — technology should not feel intimidating. Every overview on this site is written to make sense the first time you read it, whether you are a complete beginner or someone who already knows their way around a kernel debugger.
               </p>
-              <ul className="about-ticks">
-                <li>Independent and free to read, always</li>
-                <li>Plain-English first, technical accuracy second to none</li>
-                <li>Privacy-respecting — no aggressive trackers or sold data</li>
-              </ul>
+              
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                No sponsorships. No affiliate links. No "instant driver updater" nonsense. Just clear, honest explanations of how things actually work.
+              </p>
+              
+              <div className="space-y-4">
+                {[
+                  'Independent and free to read, always',
+                  'Plain-English first, technical accuracy second to none',
+                  'Privacy-respecting — no aggressive trackers or sold data'
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700 font-bold">✓</div>
+                    <span className="text-slate-700 font-medium">{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ══════════════════════════════════════
-          4. MISSION — numbered + drives-us
-      ══════════════════════════════════════ */}
-      <section className="block" style={{ background: 'var(--bg-light)', paddingTop: '20px', paddingBottom: '20px' }}>
-        <div className="container">
-          <div className="about-section-head">
-            <p className="about-sec-label">OUR MISSION</p>
-            <h2>Making drivers accessible for everyone</h2>
-            <p className="about-section-desc">
-              Our mission is to demystify device drivers so that anyone, regardless of technical
-              background, can understand, troubleshoot, and maintain their hardware with confidence.
-              We believe technology should feel approachable, not intimidating.
+      {/* 4. Mission Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 to-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+            <p className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.25em] text-blue-700 mb-4">
+              Our Mission
+            </p>
+            
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+              Making drivers accessible for everyone
+            </h2>
+            
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Our mission is to demystify device drivers so that anyone, regardless of technical background, can understand, troubleshoot, and maintain their hardware with confidence.
             </p>
           </div>
-
-          <div className="about-mission-grid">
+          
+          <div className="grid md:grid-cols-3 gap-8">
             {mission.map(m => (
-              <div key={m.n} className="about-mission-card">
-                <span className="about-mission-num">{m.n}</span>
-                <h3>{m.title}</h3>
-                <p>{m.body}</p>
+              <div key={m.n} className="group relative overflow-hidden rounded-3xl bg-white border border-slate-200 p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-sky-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative">
+                  <span className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-gradient-to-br from-blue-600 to-sky-500 text-2xl font-bold text-white shadow-lg mb-6">
+                    {m.n}
+                  </span>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{m.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{m.body}</p>
+                </div>
               </div>
             ))}
           </div>
-
-          {/* What drives us */}
-          <div className="about-drives">
-            <div className="about-drives-left">
-              <h4>What drives us</h4>
-              <p>
-                We&apos;ve all been there: staring at a confusing error message, not knowing where to
-                turn. Driver Info Hub exists to be the calm, helpful resource we wish we had in
-                those moments.
+          
+          <div className="mt-16 grid lg:grid-cols-2 gap-8">
+            <div className="rounded-3xl bg-gradient-to-br from-blue-50 to-sky-50 border border-blue-200 p-8">
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">What drives us</h3>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                We've all been there: staring at a confusing error message, not knowing where to turn. Driver Info Hub exists to be the calm, helpful resource we wish we had in those moments.
               </p>
             </div>
-            <div className="about-drives-right">
-              <p className="about-drives-title">Our Promise</p>
-              <ul className="about-drives-list">
-                <li>Always plain language, no jargon</li>
-                <li>No hidden agendas or sales pitches</li>
-                <li>Safety first, always</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════
-          5. OUR STORY
-      ══════════════════════════════════════ */}
-      <section className="block" style={{ paddingTop: '20px', paddingBottom: '20px' }}>
-        <div className="container">
-          <div className="about-section-head">
-            <p className="about-sec-label">OUR STORY</p>
-            <h2>How Driver Info Hub came to be</h2>
-          </div>
-          <div className="about-story-grid">
-            {story.map(s => (
-              <div key={s.title} className="about-story-card">
-                <h3>{s.title}</h3>
-                <p>{s.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════
-          6. TIMELINE
-      ══════════════════════════════════════ */}
-      <section className="block" style={{ background: 'var(--bg-light)', paddingTop: '20px', paddingBottom: '20px' }}>
-        <div className="container">
-          <div className="about-section-head">
-            <p className="about-sec-label">OUR JOURNEY</p>
-            <h2>Our path so far</h2>
-          </div>
-          <div className="about-timeline">
-            {journey.map((j, i) => (
-              <div key={i} className="about-tl-step">
-                <div className="about-tl-dot" aria-hidden="true" />
-                <p className="about-tl-year">{j.year}</p>
-                <h3 className="about-tl-title">{j.title}</h3>
-                <p className="about-tl-body">{j.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════
-          7. WHAT TO EXPECT — do / don't
-      ══════════════════════════════════════ */}
-      <section className="block" style={{ paddingTop: '20px', paddingBottom: '20px' }}>
-        <div className="container">
-          <div className="about-section-head">
-            <p className="about-sec-label">WHAT TO EXPECT</p>
-            <h2>What Driver Info Hub Does — And What It Does Not</h2>
-          </div>
-          <div className="about-expect-grid">
-            <div className="about-expect-card about-expect-yes">
-              <h3>
-                <span className="about-expect-icon about-expect-icon-yes" aria-hidden="true">✓</span>
-                What We Do
-              </h3>
-              <ul>
-                {weDo.map(item => (
-                  <li key={item}>
-                    <span className="about-tick" aria-hidden="true">✓</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="about-expect-card about-expect-no">
-              <h3>
-                <span className="about-expect-icon about-expect-icon-no" aria-hidden="true">✕</span>
-                What We Do Not
-              </h3>
-              <ul>
-                {weDont.map(item => (
-                  <li key={item}>
-                    <span className="about-cross" aria-hidden="true">✕</span>
-                    {item}
+            
+            <div className="rounded-3xl bg-gradient-to-br from-blue-50 to-sky-50 border border-blue-200 p-8">
+              <p className="text-xl font-bold text-slate-900 mb-4">Our Promise</p>
+              <ul className="space-y-3">
+                {[
+                  'Always plain language, no jargon',
+                  'No hidden agendas or sales pitches',
+                  'Safety first, always'
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700 font-bold text-sm">✓</span>
+                    <span className="text-slate-700">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -284,129 +247,283 @@ export default function About() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════
-          8. EDITORIAL STANDARDS
-      ══════════════════════════════════════ */}
-      <section className="block" style={{ background: 'var(--bg-light)', paddingTop: '20px', paddingBottom: '20px' }}>
-        <div className="container">
-          <div className="about-section-head">
-            <p className="about-sec-label">EDITORIAL STANDARDS</p>
-            <h2>How Driver Info Hub Is Written and Reviewed</h2>
-            <p className="about-section-desc">
-              Every article on this site is written, fact-checked, and reviewed against a clear
-              set of editorial standards designed to keep things accurate, useful, and free of
-              marketing fluff.
+      {/* 5. Our Story Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+            <p className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.25em] text-blue-700 mb-4">
+              Our Story
+            </p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
+              How Driver Info Hub came to be
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {story.map((s, i) => (
+              <div key={s.title} className="rounded-3xl bg-gradient-to-br from-blue-50 to-sky-50 border border-blue-200 p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-sky-500 text-white font-bold">
+                    {i + 1}
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900">{s.title}</h3>
+                </div>
+                <p className="text-slate-600 leading-relaxed">{s.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Timeline Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 to-white">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+            <p className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.25em] text-blue-700 mb-4">
+              Our Journey
+            </p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
+              Our path so far
+            </h2>
+          </div>
+          
+          <div className="relative">
+            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-400 to-sky-400 -translate-x-1/2"></div>
+            
+            <div className="space-y-12">
+              {journey.map((j, i) => (
+                <div key={i} className={`relative flex gap-8 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                  <div className={`flex-1 ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}></div>
+                  
+                  <div className="absolute left-8 md:left-1/2 top-6 w-6 h-6 -translate-x-1/2">
+                    <div className="w-full h-full rounded-full bg-gradient-to-br from-blue-600 to-sky-500 shadow-lg"></div>
+                    <div className="absolute -inset-2 rounded-full bg-blue-200 opacity-30 animate-ping"></div>
+                  </div>
+                  
+                  <div className="flex-1 ml-16 md:ml-0">
+                    <div className="rounded-2xl bg-white border border-slate-200 shadow-sm p-6 hover:shadow-lg transition-shadow">
+                      <p className="text-sm font-bold text-blue-600 mb-2">{j.year}</p>
+                      <h3 className="text-xl font-bold text-slate-900 mb-2">{j.title}</h3>
+                      <p className="text-slate-600">{j.body}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. What to Expect Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+            <p className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.25em] text-blue-700 mb-4">
+              What to Expect
+            </p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
+              What Driver Info Hub Does — And What It Does Not
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* What We Do */}
+            <div className="rounded-3xl bg-gradient-to-br from-blue-50 to-sky-50 border border-blue-200 p-8">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-sky-500 shadow-lg">
+                  <svg className="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-blue-900">What We Do</h3>
+              </div>
+              
+              <ul className="space-y-4">
+                {weDo.map((item, i) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700 font-bold text-sm">✓</span>
+                    <span className="text-slate-700 leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            {/* What We Don't */}
+            <div className="rounded-3xl bg-gradient-to-br from-slate-50 to-gray-50 border border-slate-200 p-8">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-600 to-gray-500 shadow-lg">
+                  <svg className="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900">What We Do Not</h3>
+              </div>
+              
+              <ul className="space-y-4">
+                {weDont.map((item, i) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-200 text-slate-700 font-bold text-sm">✗</span>
+                    <span className="text-slate-700 leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. Editorial Standards Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 to-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+            <p className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.25em] text-blue-700 mb-4">
+              Editorial Standards
+            </p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+              How Driver Info Hub Is Written and Reviewed
+            </h2>
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Every article on this site is written, fact-checked, and reviewed against a clear set of editorial standards designed to keep things accurate, useful, and free of marketing fluff.
             </p>
           </div>
-          <div className="about-ed-grid">
-            {editorial.map(e => (
-              <div key={e.title} className="about-ed-card">
-                <div className="about-ed-icon" aria-hidden="true">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {editorial.map((e, i) => (
+              <div key={e.title} className="rounded-3xl bg-white border border-slate-200 p-8 shadow-sm hover:shadow-lg transition-shadow">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-sky-500 text-white shadow-lg mb-6">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M9 11l3 3L22 4"/>
+                    <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                  </svg>
                 </div>
-                <h3>{e.title}</h3>
-                <p>{e.body}</p>
+                <h3 className="text-xl font-bold text-slate-900 mb-4">{e.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{e.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ══════════════════════════════════════
-          9. PROSE SECTIONS (Why / What / Tone)
-      ══════════════════════════════════════ */}
-      <section className="block" style={{ paddingTop: '20px', paddingBottom: '20px' }}>
-        <div className="container">
-          <div className="about-prose-grid">
-            <div className="about-prose-main">
-              <h2>Why we exist</h2>
-              <p>
-                Most driver advice online falls into two camps: dense documentation written for
-                engineers, or pushy &ldquo;speed up your PC&rdquo; pages trying to sell you something.
-                We wanted a calm third option.
-              </p>
-              <p>
-                Driver Info Hub explains what each kind of driver actually does, in plain English,
-                and walks through the most common problems with patience instead of jargon.
-                We don&apos;t host downloads, we don&apos;t run a help desk, and we don&apos;t take
-                sponsorships from the companies we write about. That independence is the whole
-                point — it&apos;s what lets us stay neutral and honest.
-              </p>
-
-              <h2>What you&apos;ll find here</h2>
-              <ul className="about-bullet-list">
-                <li>Driver overviews for every major hardware family — graphics, audio, network, USB, system, and output devices.</li>
-                <li>A knowledge hub with calm, ordered fixes for the symptoms readers ask about most.</li>
-                <li>A friendly blog with short explainers about how your computer really works underneath.</li>
-              </ul>
-
-              <h2>What we are not</h2>
-              <p>
-                We are not affiliated with any hardware maker, software publisher, or
-                operating-system vendor. We don&apos;t sell software, offer paid repairs, or provide
-                one-to-one technical support. When you need to change something on your own
-                machine, the safest source is always the official documentation from your device
-                maker — and we&apos;ll always point you there.
-              </p>
-
-              <h2>A note on our tone</h2>
-              <p>
-                Plain English, always. Friendly, never condescending. If a sentence here ever reads
-                like it was written to impress rather than to help, we got it wrong — and we&apos;d
-                genuinely like to know.
-              </p>
-
-              <div className="about-prose-ctas">
-                <Link href="/contact/" className="btn btn-primary">Get in touch</Link>
-                <Link href="/drivers/" className="btn btn-outline">Browse drivers</Link>
+      {/* 9. Prose Sections + Sidebar */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-3 gap-12">
+            <div className="lg:col-span-2 space-y-10">
+              <div>
+                <h2 className="text-3xl font-bold text-slate-900 mb-6">Why we exist</h2>
+                <p className="text-lg text-slate-600 mb-4 leading-relaxed">
+                  Most driver advice online falls into two camps: dense documentation written for engineers, or pushy "speed up your PC" pages trying to sell you something. We wanted a calm third option.
+                </p>
+                <p className="text-lg text-slate-600 leading-relaxed">
+                  Driver Info Hub explains what each kind of driver actually does, in plain English, and walks through the most common problems with patience instead of jargon. We don't host downloads, we don't run a help desk, and we don't take sponsorships from the companies we write about. That independence is the whole point — it's what lets us stay neutral and honest.
+                </p>
               </div>
-            </div>
-
-            {/* Sticky sidebar */}
-            <aside className="about-prose-aside">
-              <div className="about-aside-card">
-                <p className="about-aside-label">Quick links</p>
-                <ul className="about-aside-links">
-                  <li><Link href="/drivers/">All Driver Overviews</Link></li>
-                  <li><Link href="/knowledge/">Troubleshooting Hub</Link></li>
-                  <li><Link href="/blog/">Driver Blog</Link></li>
-                  <li><Link href="/contact/">Contact Us</Link></li>
+              
+              <div>
+                <h2 className="text-3xl font-bold text-slate-900 mb-6">What you'll find here</h2>
+                <ul className="space-y-4">
+                  {[
+                    'Driver overviews for every major hardware family — graphics, audio, network, USB, system, and output devices.',
+                    'A knowledge hub with calm, ordered fixes for the symptoms readers ask about most.',
+                    'A friendly blog with short explainers about how your computer really works underneath.'
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700 font-bold text-sm">•</span>
+                      <span className="text-lg text-slate-600 leading-relaxed">{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
-              <div className="about-aside-card about-aside-stat">
-                <div className="about-aside-stat-row">
-                  <span className="about-aside-num">7+</span>
-                  <span className="about-aside-stat-lbl">Driver families covered</span>
-                </div>
-                <div className="about-aside-stat-row">
-                  <span className="about-aside-num">0</span>
-                  <span className="about-aside-stat-lbl">Downloads hosted</span>
-                </div>
-                <div className="about-aside-stat-row">
-                  <span className="about-aside-num">100%</span>
-                  <span className="about-aside-stat-lbl">Independent editorial</span>
+              
+              <div>
+                <h2 className="text-3xl font-bold text-slate-900 mb-6">What we are not</h2>
+                <p className="text-lg text-slate-600 leading-relaxed">
+                  We are not affiliated with any hardware maker, software publisher, or operating-system vendor. We don't sell software, offer paid repairs, or provide one-to-one technical support. When you need to change something on your own machine, the safest source is always the official documentation from your device maker — and we'll always point you there.
+                </p>
+              </div>
+              
+              <div>
+                <h2 className="text-3xl font-bold text-slate-900 mb-6">A note on our tone</h2>
+                <p className="text-lg text-slate-600 leading-relaxed">
+                  Plain English, always. Friendly, never condescending. If a sentence here ever reads like it was written to impress rather than to help, we got it wrong — and we'd genuinely like to know.
+                </p>
+              </div>
+              
+              <div className="flex flex-wrap gap-4 pt-6">
+                <Link href="/contact/" className="inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-sky-500 text-white font-bold hover:from-blue-700 hover:to-sky-600 transition-all shadow-lg hover:shadow-xl">
+                  Get in touch
+                </Link>
+                <Link href="/drivers/" className="inline-flex items-center justify-center px-8 py-4 rounded-2xl border-2 border-slate-300 text-slate-700 font-bold hover:border-blue-400 hover:text-blue-700 transition-all">
+                  Browse drivers
+                </Link>
+              </div>
+            </div>
+            
+            <div className="space-y-6">
+              <div className="rounded-2xl bg-slate-50 border border-slate-200 p-6">
+                <p className="text-sm font-bold text-slate-700 uppercase tracking-wider mb-4">Quick links</p>
+                <ul className="space-y-3">
+                  {[
+                    { label: 'All Driver Overviews', href: '/drivers/' },
+                    { label: 'Troubleshooting Hub', href: '/knowledge/' },
+                    { label: 'Driver Blog', href: '/blog/' },
+                    { label: 'Contact Us', href: '/contact/' }
+                  ].map((item, i) => (
+                    <li key={i}>
+                      <Link href={item.href} className="flex items-center gap-2 text-slate-600 hover:text-blue-600 transition-colors font-medium">
+                        <span className="text-blue-500">→</span>
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div className="rounded-2xl bg-gradient-to-br from-blue-50 to-sky-50 border border-blue-200 p-6">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-3xl font-extrabold text-blue-700">7+</span>
+                    <span className="text-sm text-slate-600">Driver families covered</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-3xl font-extrabold text-blue-700">0</span>
+                    <span className="text-sm text-slate-600">Downloads hosted</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-3xl font-extrabold text-blue-700">100%</span>
+                    <span className="text-sm text-slate-600">Independent editorial</span>
+                  </div>
                 </div>
               </div>
-            </aside>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ══════════════════════════════════════
-          10. CTA BAND
-      ══════════════════════════════════════ */}
-      <section className="block" style={{ paddingTop: 0 }}>
-        <div className="container">
-          <div className="cta-band">
-            <span className="about-cta-kicker">COMMUNITY DRIVEN</span>
-            <h2>Want us to explain<br />another driver topic?</h2>
-            <p>
-              Our friendly overview covers every major hardware category — from the device on your
-              desk to the chips inside your laptop. Tell us what to write next.
+      {/* 10. CTA Band */}
+      <section className="py-16 md:py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+        <div className="absolute inset-0 bg-[url('/assets/images/grid-pattern.svg')] opacity-20"></div>
+        <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <span className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/10 px-6 py-3 text-xs font-bold uppercase tracking-[0.3em] text-blue-300 mb-6">
+              Community Driven
+            </span>
+            
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6">
+              Want us to explain<br />another driver topic?
+            </h2>
+            
+            <p className="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+              Our friendly overview covers every major hardware category — from the device on your desk to the chips inside your laptop. Tell us what to write next.
             </p>
-            <div className="cta-actions">
-              <Link href="/drivers/" className="btn btn-primary">Browse All Topics</Link>
-              <Link href="/knowledge/" className="btn btn-ghost-white">Need Help? Visit Knowledge</Link>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/drivers/" className="inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-white text-slate-900 font-bold hover:bg-slate-100 transition-all shadow-xl">
+                Browse All Topics
+              </Link>
+              <Link href="/knowledge/" className="inline-flex items-center justify-center px-8 py-4 rounded-2xl border-2 border-slate-400 text-white font-bold hover:border-blue-400 hover:bg-blue-500/20 transition-all">
+                Need Help? Visit Knowledge
+              </Link>
             </div>
           </div>
         </div>

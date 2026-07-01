@@ -37,7 +37,7 @@ export default function Home() {
             </div>
 
             {/* Headline */}
-            <h2 className="home-hero-h2">
+            <h2 className="home-hero-h2 text-white">
               Printer Drivers,
               <span className="home-hero-gradient"> Explained Clearly.</span>
             </h2>
@@ -114,42 +114,47 @@ export default function Home() {
       <HomeTabs />
 
       {/* 4. Explore Driver Categories */}
-      <section className="relative overflow-hidden bg-white py-8 md:py-10 border-b border-slate-200">
+      <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white py-12 md:py-16 border-b border-slate-200">
+        <div className="absolute inset-0 bg-[url('/assets/images/grid-pattern.svg')] opacity-[0.3] pointer-events-none"></div>
         <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6">
-          <div className="mx-auto mb-10 sm:mb-12 max-w-3xl text-center">
-            <span className="inline-flex rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.25em] text-blue-600 shadow-sm">
+          <div className="mx-auto mb-12 md:mb-16 max-w-4xl text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-6 py-3 text-xs font-bold uppercase tracking-[0.3em] text-blue-700 shadow-sm mb-6">
+              <BookOpen className="h-3 w-3" />
               What We Cover
-            </span>
-            <h2 className="mt-6 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 mb-6">
               Explore Driver Categories
             </h2>
-            <p className="mt-5 text-lg leading-8 text-slate-600">
+            <p className="text-lg sm:text-xl leading-8 text-slate-600">
               Learn, troubleshoot and understand every major driver category through simple, practical explanations.
             </p>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {driverCategories.slice(0, 8).map((category) => {
+            {driverCategories.map((category, index) => {
               const Icon = category.icon;
               return (
                 <Link
                   key={category.name}
                   href={category.href}
-                  className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-900/5 hover:border-blue-300"
+                  className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-blue-900/10 hover:border-blue-400"
+                  style={{
+                    animationDelay: `${index * 0.05}s`
+                  }}
                 >
-                  <div className="mb-5 flex items-center justify-between">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-sky-500 shadow-md">
-                      <Icon className="h-6 w-6 text-white" />
+                  <div className="mb-6 flex items-center justify-between">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-500 shadow-lg shadow-blue-900/20">
+                      <Icon className="h-7 w-7 text-white" />
                     </div>
-                    <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">Guide</span>
+                    <span className="rounded-full bg-gradient-to-r from-blue-50 to-indigo-50 px-4 py-1.5 text-xs font-bold text-indigo-700 border border-blue-200">Guide</span>
                   </div>
-                  <h3 className="mb-3 text-xl font-bold text-slate-900">{category.name}</h3>
-                  <p className="mb-6 text-sm leading-7 text-slate-600">
+                  <h3 className="mb-4 text-xl font-bold text-slate-900">{category.name}</h3>
+                  <p className="mb-7 text-sm leading-7 text-slate-600">
                     {category.desc}
                   </p>
-                  <div className="flex items-center gap-2 text-sm font-bold text-blue-600">
+                  <div className="flex items-center gap-3 text-sm font-bold text-blue-600">
                     Read more
-                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
                   </div>
                 </Link>
               );
@@ -392,7 +397,7 @@ export default function Home() {
                   <li className="flex items-center gap-3"><BookOpen className="h-5 w-5 text-blue-600" /><span className="font-medium text-slate-800">Plain-English first, technical accuracy second to none</span></li>
                   <li className="flex items-center gap-3"><Globe className="h-5 w-5 text-blue-600" /><span className="font-medium text-slate-800">Privacy-respecting — no aggressive trackers</span></li>
                 </ul>
-                <Link href="/about" className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-6 py-3 font-semibold text-white transition hover:bg-slate-800">
+                <Link href="/about/" className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-6 py-3 font-semibold text-white transition hover:bg-slate-800">
                   Read More About Us
                 </Link>
               </div>

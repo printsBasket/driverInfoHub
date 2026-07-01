@@ -153,11 +153,11 @@ export default function AdvertisingDisclosurePage() {
 
           {/* Related links */}
           <div className="mt-12 grid gap-4 sm:grid-cols-2">
-            <Link href="/cookie-policy" className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-blue-200 hover:shadow-md">
+            <Link href="/cookie-policy/" className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-blue-200 hover:shadow-md">
               <p className="font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Cookie Policy →</p>
               <p className="mt-1 text-sm text-slate-500">Cookies and your choices</p>
             </Link>
-            <Link href="/privacy" className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-blue-200 hover:shadow-md">
+            <Link href="/privacy/" className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-blue-200 hover:shadow-md">
               <p className="font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Privacy Policy →</p>
               <p className="mt-1 text-sm text-slate-500">How we handle your data</p>
             </Link>
